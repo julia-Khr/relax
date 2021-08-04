@@ -11,4 +11,9 @@ class Enterprise extends Model
     public $fillable = ['name', 'image'];
     public $timestamps = false;
     use HasFactory;
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }

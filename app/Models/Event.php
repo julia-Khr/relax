@@ -17,4 +17,25 @@ class Event extends Model
         'enterprise_id'
     ];
     use HasFactory;
+
+    public function enterprise()
+    {
+        return $this->belongsTo(Enterprise::class, 'enterprise_id');
+    }
+    public function visitors()
+    {
+        return $this->hasMany(Visitor::class);
+    }
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
+    public function responses()
+    {
+        return $this->hasMany(Response::class);
+    }
+    public function things()
+    {
+        return $this->belongsToMany(Thing::class, 'event_things')->withPivot('thing_count');
+    }
 }

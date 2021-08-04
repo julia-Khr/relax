@@ -10,4 +10,9 @@ class ThingCategory extends Model
     public $table = 'thing_categories';
     public $fillable = ['name'];
     use HasFactory;
+
+    public function things()
+    {
+        return $this->hasMany(Thing::class);
+    }
 }

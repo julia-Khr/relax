@@ -7,34 +7,53 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    use HasFactory;
+
     public $table = 'events';
-    public $timestamps = false;
-    public $fillable = [
+    protected $fillable = [
         'name',
         'description',
         'start_date',
         'finish_date',
         'enterprise_id'
     ];
-    use HasFactory;
 
-    public function enterprise()
+    /**
+     * @return object
+     */
+    public function enterprise(): object
     {
         return $this->belongsTo(Enterprise::class, 'enterprise_id');
     }
-    public function visitors()
+
+    /**
+     * @return object
+     */
+    public function visitors(): object
     {
         return $this->hasMany(Visitor::class);
     }
-    public function photos()
+
+    /**
+     * @return object
+     */
+    public function photos(): object
     {
         return $this->hasMany(Photo::class);
     }
-    public function responses()
+
+    /**
+     * @return object
+     */
+    public function responses(): object
     {
         return $this->hasMany(Response::class);
     }
-    public function things()
+
+    /**
+     * @return object
+     */
+    public function things(): object
     {
         return $this->belongsToMany(Thing::class, 'event_things')->withPivot('thing_count');
     }

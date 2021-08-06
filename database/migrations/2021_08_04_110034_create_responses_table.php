@@ -15,12 +15,14 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->id();
-            $table->string('author');
-            $table->string('avatar');
+            $table->string('author_name');
+            $table->string('author_avatar_url');
             $table->text('text');
             $table->timestamp('date');
             $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -32,14 +34,5 @@ class CreateResponsesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('responses');
-        Schema::table('responses', function (Blueprint $table) {
-            $table->dropColumn('id');
-            $table->dropColumn('author');
-            $table->dropColumn('avatar');
-            $table->dropColumn('text');
-            $table->dropColumn('date');
-            $table->dropColumn('event_id');
-            $table->dropForeign('responses_event_id_foreign');
-        });
     }
 }

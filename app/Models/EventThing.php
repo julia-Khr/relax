@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventThing extends Model
 {
+    use HasFactory;
+
     public $table = 'event_things';
-    public $fillable = [
+    protected $fillable = [
         'event_id',
         'thing_id',
         'thing_count'
     ];
-    use HasFactory;
 }

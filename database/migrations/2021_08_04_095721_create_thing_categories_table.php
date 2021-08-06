@@ -16,6 +16,7 @@ class CreateThingCategoriesTable extends Migration
         Schema::create('thing_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -27,9 +28,5 @@ class CreateThingCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('thing_categories');
-        Schema::table('thing_categories', function (Blueprint $table) {
-            $table->dropColumn('id');
-            $table->dropColumn('name');
-        });
     }
 }

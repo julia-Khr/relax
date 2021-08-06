@@ -8,16 +8,21 @@ use phpDocumentor\Reflection\Types\This;
 
 class Response extends Model
 {
+    use HasFactory;
+
     public $table = 'responses';
-    public $fillable = [
-        'author',
-        'avatar',
+    protected $fillable = [
+        'author_name',
+        'avatar_avatar_url',
         'text',
         'date',
         'event_id'
     ];
-    use HasFactory;
-    public function event()
+
+    /**
+     * @return object
+     */
+    public function event(): object
     {
         return $this->belongsTo(Event::class, 'event_id');
     }

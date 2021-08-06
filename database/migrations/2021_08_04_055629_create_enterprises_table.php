@@ -17,6 +17,7 @@ class CreateEnterprisesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
+            $table->timestamps();
         });
     }
 
@@ -25,14 +26,9 @@ class CreateEnterprisesTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('enterprises');
-
-        Schema::table('enterprises', function (Blueprint $table) {
-            $table->dropColumn('id');
-            $table->dropColumn('name');
-            $table->dropColumn('image');
-        });
     }
 }

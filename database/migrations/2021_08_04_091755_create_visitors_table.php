@@ -19,7 +19,9 @@ class CreateVisitorsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_id')->references('id')->on('events')->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -31,13 +33,5 @@ class CreateVisitorsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('visitors');
-        Schema::table('visitors', function (Blueprint $table) {
-            $table->dropColumn('id');
-            $table->dropColumn('name');
-            $table->dropColumn('email');
-            $table->dropColumn('phone');
-            $table->dropColumn('event_id');
-            $table->dropForeign('visitors_event_id_foreign');
-        });
     }
 }

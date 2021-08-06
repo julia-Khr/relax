@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Visitor extends Model
 {
+    use HasFactory;
+
     public $table = 'visitors';
     public $fillable = [
         'name',
@@ -15,9 +17,12 @@ class Visitor extends Model
         'event_id'
     ];
 
-    use HasFactory;
 
-    public function event(){
+    /**
+     * @return object
+     */
+    public function event(): object
+    {
         return $this->belongsTo(Event::class, 'event_id');
     }
 }

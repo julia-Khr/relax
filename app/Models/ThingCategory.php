@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class ThingCategory extends Model
 {
-    public $table = 'thing_categories';
-    public $fillable = ['name'];
     use HasFactory;
 
-    public function things()
+    public $table = 'thing_categories';
+    protected $fillable = ['name'];
+
+    /**
+     * @return object
+     */
+    public function things(): object
     {
         return $this->hasMany(Thing::class);
     }

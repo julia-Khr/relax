@@ -17,10 +17,12 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->date('start_date');
-            $table->date('finish_date');
+            $table->timestamp('start_date');
+            $table->timestamp('finish_date');
             $table->unsignedBigInteger('enterprise_id');
-            $table->foreign('enterprise_id')->references('id')->on('enterprises');
+            $table->foreign('enterprise_id')->references('id')->on('enterprises')->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -32,14 +34,5 @@ class CreateEventsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('events');
-        Schema::table('events', function (Blueprint $table) {
-            $table->dropColumn('id');
-            $table->dropColumn('name');
-            $table->dropColumn('description');
-            $table->dropColumn('start_date');
-            $table->dropColumn('finish_date');
-            $table->dropColumn('enterprise_id');
-            $table->dropForeign('events_enterprise_id_foreign');
-        });
     }
 }

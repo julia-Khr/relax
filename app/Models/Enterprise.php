@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enterprise extends Model
 {
-    public $table = 'enterprises';
-    public $fillable = ['name', 'image'];
-    public $timestamps = false;
     use HasFactory;
 
-    public function events()
+    public $table = 'enterprises';
+    protected $fillable = ['name', 'image'];
+
+    /**
+     * @return object
+     */
+    public function events(): object
     {
         return $this->hasMany(Event::class);
     }

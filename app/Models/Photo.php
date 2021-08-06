@@ -7,15 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
+    use HasFactory;
+
     public $table = 'photos';
-    public $fillable = [
-        'name',
+    protected $fillable = [
+        'url',
+        'alt',
         'event_id'
     ];
 
-    use HasFactory;
-    public function event()
+
+    /**
+     * @return object
+     */
+    public function event(): object
     {
-        $this->belongsTo(Event::class, 'event_id');
+        return $this->belongsTo(Event::class, 'event_id');
     }
 }

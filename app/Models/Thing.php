@@ -8,11 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Thing extends Model
 {
     use HasFactory;
-    public function events()
+
+    public $table = 'things';
+    protected $fillable = [
+        'name',
+        'thing_category_id'
+    ];
+
+    /**
+     * @return object
+     */
+    public function events(): object
     {
         return $this->belongsToMany(Event::class, 'event_things')->withPivot('thing_count');
     }
-    public function thing_category()
+
+    /**
+     * @return object
+     */
+    public function thing_category(): object
     {
         return $this->belongsTo(ThingCategory::class, 'thing_category_id');
     }

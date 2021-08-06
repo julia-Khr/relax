@@ -17,8 +17,8 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->timestamp('start_date');
-            $table->timestamp('finish_date');
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('finish_date')->nullable();
             $table->unsignedBigInteger('enterprise_id');
             $table->foreign('enterprise_id')->references('id')->on('enterprises')->onUpdate('cascade')
                 ->onDelete('cascade');

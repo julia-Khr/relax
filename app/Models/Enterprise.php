@@ -10,7 +10,7 @@ class Enterprise extends Model
     use HasFactory;
 
     public $table = 'enterprises';
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['name', 'image_url'];
 
     /**
      * @return object

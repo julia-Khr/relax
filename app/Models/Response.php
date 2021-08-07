@@ -13,7 +13,7 @@ class Response extends Model
     public $table = 'responses';
     protected $fillable = [
         'author_name',
-        'avatar_avatar_url',
+        'author_avatar_url',
         'text',
         'date',
         'event_id'

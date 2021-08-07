@@ -18,10 +18,9 @@ class Event extends Model
         'enterprise_id'
     ];
 
-    /**
-     * @return object
-     */
-    public function enterprise(): object
+
+
+    public function enterprise()
     {
         return $this->belongsTo(Enterprise::class, 'enterprise_id');
     }

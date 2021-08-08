@@ -1,7 +1,7 @@
-<footer class="text-white px-5 py-5">
-    <div class="text-center">
+<footer class="text-white py-5">
+    <div class="container text-center">
     <div class="row text-center ">
-        <div class="col-4 mx-auto text-md-left">
+        <div class="col-4 mx-auto d-md-flex text-md-left">
             <ul class="list-unstyled text-start" style="font-family: 'Roboto', sans-serif;">
                 <li style=>Вінниця, Провулок Цегельний, 12 </li>
                 <li>Пн-Пт  10:00 - 19:00</li>
@@ -9,10 +9,10 @@
 
             </ul>
         </div>
-        <div class="col-4 mx-auto d-md-flex flex-column">
-            <div class="mx-auto d-md-flex flex-row justify-content-between px-4">
+        <div class="col-4 mx-auto d-md-flex flex-column text-center">
+            <div class="mx-auto d-md-flex text-center flex-row justify-content-between px-4">
             <img src="/admin/dist/img/Vector.png" width="114px" height="93px">
-                 <h1 class="text-uppercase font-weight-bold" style="font-family: 'Montserrat', sans-serif; font-size: 53px; line-height: 114px">IT RELAX</h1>
+                 <h1 class="text-uppercase font-weight-bold" style="font-family: 'Montserrat', sans-serif; font-size: 43px; line-height: 114px">IT RELAX</h1>
             </div>
             <div class="text-center">
                  <p>Хочете бути в курсі усіх поїздок?</p>
@@ -28,7 +28,7 @@
     </div>
     <div class="row text-center text-md-left">
         <div class="col-4 mx-auto text-md-left" style="font-family: 'Roboto', sans-serif;"><p>intitavn@gmail.com</p></div>
-        <div class="col-4 mx-auto">
+        <div class="col-4 mx-auto  text-center">
             <form class="search-wrapper cf">
                 <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail"
                  style="border-radius: 20px; box-shadow: none">

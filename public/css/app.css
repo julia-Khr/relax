@@ -10,6 +10,7 @@ li{
 }
 
 .cf:before, .cf:after{
+content:"";
 display:table;
 }
 
@@ -20,7 +21,9 @@ clear:both;
 .cf{
 zoom:1;
 }
-
+.search-wrapper button:hover{
+    /*     background: #e54040; */
+    }
 .search-wrapper {
 width: 450px;
 border-radius: 40px;

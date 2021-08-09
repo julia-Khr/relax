@@ -1,12 +1,3 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
-
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap/scss/bootstrap";
-
 .carousel-control-next-icon {
     background-image: url("/img/Button_right.svg");
     width: 4rem;

@@ -20,14 +20,13 @@ use App\Http\Controllers\VisitorController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index']);

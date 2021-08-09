@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends('layouts.visitor.layout')
 
-    <title>visitor @yield('title')</title>
-  @include('layouts.style')
-</head>
-<body>
-<div class="content" style="height: 100%">
+@section('title', 'Home page')
+@section('content')
 
-</div>
-@include('layouts.footer')
-
-@include('layouts.scripts')
-</body>
-</html>
+@endsection

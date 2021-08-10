@@ -207,6 +207,7 @@ li {
     display: none;
   }
 }
+<<<<<<< HEAD
 
 .carousel-control-next-icon {
   background-image: url("/img/Button_right.svg");
@@ -226,3 +227,5 @@ li {
   margin-top: -13%;
   font-size: 1rem;
 }
+=======
+>>>>>>> TaskModulEnterpriseNew

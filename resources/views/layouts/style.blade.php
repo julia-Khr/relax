@@ -33,4 +33,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
-
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+</style>

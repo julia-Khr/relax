@@ -7,7 +7,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-  
+
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">

@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
 
   <link rel="stylesheet" href="/css/app.css">
-  <script src="js/app.js"></script>
+  <script src="/js/app.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

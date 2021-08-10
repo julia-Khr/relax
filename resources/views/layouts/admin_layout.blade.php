@@ -41,17 +41,18 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-
+        @if (session('success'))
+        <div class="alert alert-success"> {{session('success')}} </div>
+        @endif
+         @if (session('danger'))
+        <div class="alert alert-danger">{{session('danger')}}</div>
+        @endif
     @yield('content')
 
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">Admin</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.1.0
-    </div>
+
   </footer>
 
   <!-- Control Sidebar -->

@@ -30,8 +30,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
-    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index']);
-    // Route::resource('enterprises', EnterpriseController::class);
+    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
+    Route::resource('enterprises', EnterpriseController::class);
     // Route::resource('events', EventController::class);
     // Route::resource('things', ThingController::class);
     // Route::resource('responses', ResponseController::class);

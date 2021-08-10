@@ -3,6 +3,68 @@
     padding: 0;
   }
 
+  header {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -86px;
+    z-index: 50;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-link {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .nav-link:hover {
+    color: darkgray;
+  }
+
+  .container-fluid {
+    padding: 0px;
+  }
+
+  .burger {
+    background: url("/visitor/img/Menu.png");
+    width: 42px;
+    height: 42px;
+    background-size: cover;
+  }
+
+  .arrow {
+    background: url("/visitor/img/arrow.png");
+    width: 42px;
+    height: 42px;
+    background-size: cover;
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("/img/Button_right.svg");
+    width: 4rem;
+    height: 4rem;
+}
+.carousel-control-prev-icon {
+    background-image: url("/img/Button_left.svg");
+    width: 4rem;
+    height: 4rem;
+}
+.name_enterprise {
+    position: absolute;
+    margin-left: 3%;
+    margin-top: -13%;
+    font-size: 1rem;
+}
+
   footer {
     position: relative;
     width: 100%;
@@ -98,51 +160,6 @@
     /* remove extra button spacing for Mozilla Firefox */
     border: 0;
     padding: 0;
-  }
-
-  header {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -86px;
-    z-index: 50;
-  }
-
-  nav {
-    width: 100%;
-  }
-
-  .nav-link {
-    color: #FFFFFF;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 29px;
-  }
-
-  .nav-link:hover {
-    color: darkgray;
-  }
-
-  .container-fluid {
-    padding: 0px;
-  }
-
-  .burger {
-    background: url("/visitor/img/Menu.png");
-    width: 42px;
-    height: 42px;
-    background-size: cover;
-  }
-
-  .arrow {
-    background: url("/visitor/img/arrow.png");
-    width: 42px;
-    height: 42px;
-    background-size: cover;
   }
 
   @media (min-width: 768px) {

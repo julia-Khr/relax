@@ -5,27 +5,4 @@
 @import "variables";
 
 // Bootstrap
-<<<<<<< HEAD
-@import "~bootstrap/scss/bootstrap";
-
-.carousel-control-next-icon {
-    background-image: url("/img/Button_right.svg");
-    width: 4rem;
-    height: 4rem;
-}
-.carousel-control-prev-icon {
-    background-image: url("/img/Button_left.svg");
-    width: 4rem;
-    height: 4rem;
-}
-.name_enterprise {
-    position: absolute;
-    margin-left: 3%;
-    margin-top: -13%;
-    font-size: 1rem;
-}
-=======
 @import '~bootstrap/scss/bootstrap';
-
-
->>>>>>> main

@@ -1,9 +1,3 @@
-
-{{-- Include that in layout" --}}
-    {{-- <link rel="stylesheet" href="css/app.css">
-    <script src="js/app.js"></script> --}}
-
-
 <div class="conteiner-xxl">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">

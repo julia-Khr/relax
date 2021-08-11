@@ -5,8 +5,8 @@
   @include('inc.style')
 </head>
 <body>
-    @include('layouts.visitor.header')
-    <section class="content" style="height: 1000px">
+    @include('inc.header')
+    <section class="content">
         @yield('content')
         @include('inc.carousel')
     </section>

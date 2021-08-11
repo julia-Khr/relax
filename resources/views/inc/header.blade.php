@@ -4,13 +4,14 @@
             <div class="row align-items-center" style="width:100%">
                 <div class="col-lg-2 col-md-2 col-sm-12 col-12 d-flex flex-row-reverse justify-content-between">
                     <a href="" class="navbar-brand pt-0 mt-0 ms-0 mb-0 logo"></a>
-                    <button class="navbar-toggler burger" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">
+                        <img src="{{URL::asset('/img/Menu.png')}}" alt="" width="42" height="42">
                     </button>
                 </div>
                 <div class="col-lg-10 col-md-10">
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-between">
+                        <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-around">
                             <li class="nav-item">
                                 <a href="" class="nav-link">Головна</a>
                             </li>
@@ -35,23 +36,4 @@
             </div>
         </div>
     </nav>
-</header>
-<script>
-    const burgerBtn = document.querySelector('.navbar-toggler')
-
-    burgerBtn.addEventListener('click', (e) => {
-        document.body.classList.toggle('opened');
-        burgerBtn.classList.add('arrow');
-    })
-
-    burgerBtn.addEventListener('click', (e) => {
-        const navbar_is_active = document.body.classList.contains('opened');
-        if (!navbar_is_active) {
-            burgerBtn.classList.remove('arrow');
-        }
-    });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    </header>

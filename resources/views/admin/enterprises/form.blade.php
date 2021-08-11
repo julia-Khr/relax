@@ -1,11 +1,11 @@
-@extends('layouts.admin_layout')
+@extends('layouts.admin.admin_layout')
 
 @section('title', isset($enterprise) ? 'Update Enterprise: ' . $enterprise->name : 'Create enterprise')
 
 @section('content')
 <section class="content">
 {{-- {{dd($enterprise)}} --}}
-<div class="card card-primary">
+<div class="card card-primary ">
               <div class="card-header">
                 <h3 class="card-title">{{isset($enterprise) ? 'Оновити захід' : 'Створити захід'}}</h3>
               </div>

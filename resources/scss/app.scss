@@ -1,10 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
-  }
-
+}
   header {
+
     width: 100%;
     position: absolute;
     display: flex;
@@ -12,68 +11,44 @@
     justify-content: center;
     margin-bottom: -86px;
     z-index: 50;
-  }
+}
 
-  nav {
+nav {
     width: 100%;
-  }
+}
 
-  .nav-link {
-    color: #FFFFFF;
+.nav-link {
+    color: #ffffff;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 29px;
-  }
+}
 
-  .nav-link:hover {
+.nav-link:hover {
     color: darkgray;
-  }
+}
 
-  .container-fluid {
+.container-fluid {
     padding: 0px;
-  }
+}
 
-  .burger {
-    background: url("/img/Menu.png");
+.burger {
+    background: url("/visitor/img/Menu.png");
     width: 42px;
     height: 42px;
     background-size: cover;
-  }
+}
 
-  .arrow {
-    background: url("/img/arrow.png");
+.arrow {
+    background: url("/visitor/img/arrow.png");
     width: 42px;
     height: 42px;
     background-size: cover;
-  }
+}
 
-  .img__container {
-    position: relative;
-
-  }
-
-  .img__container>img {
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 0 6px #9E9E9E;
- }
-
-  .img__description {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-
-  .carousel-control-next-icon {
+.carousel-control-next-icon {
     background-image: url("/img/Button_right.svg");
     width: 4rem;
     height: 4rem;
@@ -90,38 +65,39 @@
     font-size: 1rem;
 }
 
-  footer {
+footer {
     position: relative;
     width: 100%;
     height: 320px;
-    background-color: #177E1C;
-  }
+    background-color: #177e1c;
+}
 
-  li {
+li {
     margin-bottom: 20px;
-  }
+}
 
-  .cf:before, .cf:after {
+.cf:before,
+.cf:after {
     content: "";
     display: table;
-  }
+}
 
-  .cf:after {
+.cf:after {
     clear: both;
-  }
+}
 
-  .cf {
+.cf {
     zoom: 1;
-  }
+}
 
-  .search-wrapper {
+.search-wrapper {
     width: 450px;
     height: 40px;
     border-radius: 40px;
     background-color: white;
-  }
+}
 
-  .search-wrapper input {
+.search-wrapper input {
     width: 270px;
     height: 40px;
     padding: 10px 30px;
@@ -130,32 +106,32 @@
     background: #fff;
     border-radius: 40px;
     border-top-style: none;
-  }
+}
 
-  .search-wrapper input:focus {
+.search-wrapper input:focus {
     outline: 0;
     background: #fff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
-  }
+}
 
-  .search-wrapper input::-webkit-input-placeholder {
+.search-wrapper input::-webkit-input-placeholder {
     font-weight: normal;
     font-style: italic;
     padding-left: 20px;
-  }
+}
 
-  .search-wrapper input:-moz-placeholder {
+.search-wrapper input:-moz-placeholder {
     font-weight: normal;
     font-style: italic;
-  }
+}
 
-  .search-wrapper input:-ms-input-placeholder {
+.search-wrapper input:-ms-input-placeholder {
     font-weight: normal;
     font-style: italic;
     border-style: none;
-  }
+}
 
-  .search-wrapper button {
+.search-wrapper button {
     overflow: visible;
     position: relative;
     float: right;
@@ -166,67 +142,68 @@
     width: 110px;
     font: 13px/40px "lucida sans", "trebuchet MS", "Tahoma";
     color: #fff;
-    background: #FF931ECC;
+    background: #ff931ecc;
     border-radius: 40px;
-  }
+}
 
-  .search-wrapper button:active,
-  .search-wrapper button:focus {
+.search-wrapper button:active,
+.search-wrapper button:focus {
     background: #198cff;
     outline: 0;
-  }
+}
 
-  .search-wrapper button:focus:before,
-  .search-wrapper button:active:before {
+.search-wrapper button:focus:before,
+.search-wrapper button:active:before {
     border-right-color: #c42f2f;
-  }
+}
 
-  .search-wrapper button::-moz-focus-inner {
+.search-wrapper button::-moz-focus-inner {
     /* remove extra button spacing for Mozilla Firefox */
     border: 0;
     padding: 0;
-  }
+
+}
 
   @media (min-width: 768px) {
     .logo {
-      background: url("/img/Logoleft.png");
-      width: 80px;
-      height: 55px;
-      background-size: cover;
+        background: url("/visitor/img/Logoleft.png");
+        width: 80px;
+        height: 55px;
+        background-size: cover;
     }
 
     nav {
-      background-color: rgba(160, 160, 160, 0.2);
-      -webkit-backdrop-filter: blur(20px);
-              backdrop-filter: blur(20px);
+        background-color: rgba(160, 160, 160, 0.2);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
     }
-  }
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .navbar-collapse {
-      background-color: rgba(160, 160, 160, 0.2);
-      -webkit-backdrop-filter: blur(20px);
-              backdrop-filter: blur(20px);
+        background-color: rgba(160, 160, 160, 0.2);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
     }
 
     .logo {
-      background: url("/img/Logoright.png");
-      width: 80px;
-      height: 55px;
-      background-size: cover;
+        background: url("/visitor/img/Logoright.png");
+        width: 80px;
+        height: 55px;
+        background-size: cover;
     }
-  }
-  @media (min-width: 1440px) {
+}
+@media (min-width: 1025px) {
     .make-end {
-      text-align: end;
+        text-align: end;
     }
-  }
-  @media (max-width: 1224px) {
+}
+@media (max-width: 1024px) {
     .space {
-      display: none;
+        display: none;
     }
-  }
-  @media (max-width: 1224px) {
+}
+@media (max-width: 1224px) {
     .display-none {
-      display: none;
+        display: none;
     }
-  }
+}

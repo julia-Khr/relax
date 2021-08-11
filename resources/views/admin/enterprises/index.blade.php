@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout')
+@extends('layouts.admin.admin_layout')
 
 @section('title', 'Заходи')
 
@@ -6,7 +6,7 @@
 
 
 
-    <section class="content">
+    <section class="content ">
 
       <!-- Default box -->
       <div class="card">

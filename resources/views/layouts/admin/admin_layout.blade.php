@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>admin_panel - @yield('title')</title>
+  <title>Admin_panel - @yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,33 +27,32 @@
   <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
 
   <link rel="stylesheet" href="/css/app.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="/js/app.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
-@include('inc.header')
+{{-- @include('layouts.visitor.header') --}}
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-
+@include('layouts.admin.aside')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-
+        @if (session('success'))
+        <div class="alert alert-success"> {{session('success')}} </div>
+        @endif
+         @if (session('danger'))
+        <div class="alert alert-danger">{{session('danger')}}</div>
+        @endif
     @yield('content')
 
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0-rc
-    </div>
+
   </footer>
 
   <!-- Control Sidebar -->

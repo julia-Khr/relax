@@ -15,7 +15,9 @@ class EnterpriseController extends Controller
      */
     public function index()
     {
-        //
+        $enterprises = Enterprise::all();
+
+        return view('admin.enterprises.index', compact('enterprises'));
     }
 
     /**
@@ -25,7 +27,7 @@ class EnterpriseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.enterprises.form');
     }
 
     /**
@@ -36,7 +38,9 @@ class EnterpriseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Enterprise::create($request->only(['name', 'image_url']));
+        return redirect()->back()->withSuccess('Створено захід :' . $request->name);
     }
 
     /**
@@ -58,7 +62,7 @@ class EnterpriseController extends Controller
      */
     public function edit(Enterprise $enterprise)
     {
-        //
+        return view('admin.enterprises.form', compact('enterprise'));
     }
 
     /**
@@ -70,7 +74,8 @@ class EnterpriseController extends Controller
      */
     public function update(Request $request, Enterprise $enterprise)
     {
-        //
+        $enterprise->update($request->only(['name', 'image_url']));
+        return redirect()->back()->withSuccess('Оновлено захід: ' . $enterprise->name);
     }
 
     /**
@@ -81,6 +86,7 @@ class EnterpriseController extends Controller
      */
     public function destroy(Enterprise $enterprise)
     {
-        //
+        $enterprise->delete();
+        return redirect()->route('enterprises.index')->withDanger('Захід ' . $enterprise->name . ' видалено!');
     }
 }

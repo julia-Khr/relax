@@ -24,13 +24,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
-    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index']);
-    // Route::resource('enterprises', EnterpriseController::class);
+    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
+    Route::resource('/enterprises', EnterpriseController::class);
     // Route::resource('events', EventController::class);
     // Route::resource('things', ThingController::class);
     // Route::resource('responses', ResponseController::class);
@@ -38,3 +39,4 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     // Route::resource('subscriptions', SubscriptionController::class);
     // Route::resource('visitors', VisitorController::class);
 });
+Route::view('/test', 'inc.carousel');

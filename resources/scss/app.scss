@@ -4,10 +4,6 @@
     padding: 0;
   }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> TaskModulEnterpriseNew
   header {
     width: 100%;
     position: absolute;
@@ -40,17 +36,41 @@
   }
 
   .burger {
-    background: url("/visitor/img/Menu.png");
+    background: url("/img/Menu.png");
     width: 42px;
     height: 42px;
     background-size: cover;
   }
 
   .arrow {
-    background: url("/visitor/img/arrow.png");
+    background: url("/img/arrow.png");
     width: 42px;
     height: 42px;
     background-size: cover;
+  }
+
+  .img__container {
+    position: relative;
+
+  }
+
+  .img__container>img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 0 6px #9E9E9E;
+ }
+
+  .img__description {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 
   .carousel-control-next-icon {
@@ -167,13 +187,9 @@
     padding: 0;
   }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> TaskModulEnterpriseNew
   @media (min-width: 768px) {
     .logo {
-      background: url("/visitor/img/Logoleft.png");
+      background: url("/img/Logoleft.png");
       width: 80px;
       height: 55px;
       background-size: cover;
@@ -193,18 +209,18 @@
     }
 
     .logo {
-      background: url("/visitor/img/Logoright.png");
+      background: url("/img/Logoright.png");
       width: 80px;
       height: 55px;
       background-size: cover;
     }
   }
-  @media (min-width: 1025px) {
+  @media (min-width: 1440px) {
     .make-end {
       text-align: end;
     }
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1224px) {
     .space {
       display: none;
     }

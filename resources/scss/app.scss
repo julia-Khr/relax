@@ -1,15 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
 }
-
 header {
-=======
-  }
-
-  header {
->>>>>>> main
     width: 100%;
     position: absolute;
     display: flex;
@@ -40,59 +33,21 @@ nav {
     padding: 0px;
 }
 
-<<<<<<< HEAD
 .burger {
     background: url("/visitor/img/Menu.png");
-=======
-  .burger {
-    background: url("/img/Menu.png");
->>>>>>> main
     width: 42px;
     height: 42px;
     background-size: cover;
 }
 
-<<<<<<< HEAD
 .arrow {
     background: url("/visitor/img/arrow.png");
-=======
-  .arrow {
-    background: url("/img/arrow.png");
->>>>>>> main
     width: 42px;
     height: 42px;
     background-size: cover;
 }
 
-<<<<<<< HEAD
 .carousel-control-next-icon {
-=======
-  .img__container {
-    position: relative;
-
-  }
-
-  .img__container>img {
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 0 6px #9E9E9E;
- }
-
-  .img__description {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-
-  .carousel-control-next-icon {
->>>>>>> main
     background-image: url("/img/Button_right.svg");
     width: 4rem;
     height: 4rem;
@@ -205,14 +160,14 @@ li {
     /* remove extra button spacing for Mozilla Firefox */
     border: 0;
     padding: 0;
-  }
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .logo {
-      background: url("/img/Logoleft.png");
-      width: 80px;
-      height: 55px;
-      background-size: cover;
+        background: url("/visitor/img/Logoleft.png");
+        width: 80px;
+        height: 55px;
+        background-size: cover;
     }
 
     nav {
@@ -229,18 +184,18 @@ li {
     }
 
     .logo {
-      background: url("/img/Logoright.png");
-      width: 80px;
-      height: 55px;
-      background-size: cover;
+        background: url("/visitor/img/Logoright.png");
+        width: 80px;
+        height: 55px;
+        background-size: cover;
     }
-  }
-  @media (min-width: 1440px) {
+}
+@media (min-width: 1025px) {
     .make-end {
         text-align: end;
     }
-  }
-  @media (max-width: 1224px) {
+}
+@media (max-width: 1024px) {
     .space {
         display: none;
     }

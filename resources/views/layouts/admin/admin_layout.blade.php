@@ -33,11 +33,11 @@
 <div class="wrapper">
 
   <!-- Navbar -->
-@include('inc.header')
+@include('layouts.visitor.header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-@include('inc.aside')
+@include('layouts.admin.aside')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

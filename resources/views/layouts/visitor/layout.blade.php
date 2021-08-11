@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <title>visitor @yield('title')</title>
-  @include('layouts.style')
+  @include('inc.style')
 </head>
 <body>
     @include('layouts.visitor.header')
     <section class="content" style="height: 1000px">
         @yield('content')
-        @include('layouts.visitor.carousel')
+        @include('inc.carousel')
     </section>
-    @include('layouts.visitor.footer')
-@include('layouts.scripts')
+    @include('inc.footer')
+@include('inc.scripts')
 </body>
 </html>

@@ -51,7 +51,7 @@ class EnterpriseController extends Controller
      */
     public function show(Enterprise $enterprise)
     {
-        //
+        return view('admin.enterprises.show', compact('enterprise'));
     }
 
     /**

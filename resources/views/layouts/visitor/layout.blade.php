@@ -5,11 +5,12 @@
   @include('inc.style')
 </head>
 <body>
-    @include('layouts.visitor.header')
+    @include('inc.header')
     <section class="content" style="height: 1000px">
         @yield('content')
-        @include('inc.carousel')
+
     </section>
+    @include('inc.carousel')
     @include('inc.footer')
 @include('inc.scripts')
 </body>

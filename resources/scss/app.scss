@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
 }
-  header {
-
+header {
     width: 100%;
     position: absolute;
     display: flex;
@@ -185,10 +184,9 @@ li {
     /* remove extra button spacing for Mozilla Firefox */
     border: 0;
     padding: 0;
-
 }
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .logo {
         background: url("/visitor/img/Logoleft.png");
         width: 80px;

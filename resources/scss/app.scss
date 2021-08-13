@@ -9,7 +9,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -86px;
     z-index: 50;
 }
 
@@ -22,7 +21,7 @@ nav {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 29px;
 }
 
@@ -30,19 +29,15 @@ nav {
     color: darkgray;
 }
 
-.container-fluid {
-    padding: 0px;
-}
-
 .burger {
-    background: url("/visitor/img/Menu.png");
+    background: url("/img/Menu.png");
     width: 42px;
     height: 42px;
     background-size: cover;
 }
 
 .arrow {
-    background: url("/visitor/img/arrow.png");
+    background: url("/img/arrow.png");
     width: 42px;
     height: 42px;
     background-size: cover;
@@ -165,7 +160,7 @@ li {
 
 @media (min-width: 768px) {
     .logo {
-        background: url("/visitor/img/Logoleft.png");
+        background: url("/img/Logoleft.png");
         width: 80px;
         height: 55px;
         background-size: cover;
@@ -177,7 +172,7 @@ li {
         backdrop-filter: blur(20px);
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
     .navbar-collapse {
         background-color: rgba(160, 160, 160, 0.2);
         -webkit-backdrop-filter: blur(20px);
@@ -185,7 +180,7 @@ li {
     }
 
     .logo {
-        background: url("/visitor/img/Logoright.png");
+        background: url("/img/Logoright.png");
         width: 80px;
         height: 55px;
         background-size: cover;

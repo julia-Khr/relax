@@ -19,7 +19,7 @@
         <div class="col-sm-12 col-xl-4 mx-auto d-flex flex-column ">
             <div class="display-none">
             <div class="mx-auto d-md-flex flex-row justify-content-center px-4">
-                <img src="/admin/dist/img/Vector.png" width="114px" height="93px">
+                <img src="/img/Vector.png" width="114px" height="93px">
                 <h1 class="text-uppercase font-weight-bold" style="font-family: 'Montserrat', sans-serif; font-size: 43px; line-height: 114px">IT RELAX</h1>
             </div>
             <div class="text-center">

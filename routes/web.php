@@ -39,4 +39,4 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     // Route::resource('subscriptions', SubscriptionController::class);
     // Route::resource('visitors', VisitorController::class);
 });
-Route::view('/test', 'inc.carousel');
+Route::view('/test', 'visitor.home.index');

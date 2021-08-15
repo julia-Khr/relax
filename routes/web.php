@@ -41,5 +41,5 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
 });
 Route::view('/test', 'visitor.home.index');
 
-
 Route::view('/card', 'visitor.home.greeting');
+

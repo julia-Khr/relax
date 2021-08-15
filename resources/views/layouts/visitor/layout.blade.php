@@ -10,7 +10,6 @@
     <section class="content">
         @yield('content')
     </section>
-    @include('inc.carousel')
     @include('inc.footer')
 @include('inc.scripts')
 </body>

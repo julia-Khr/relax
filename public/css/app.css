@@ -48,37 +48,14 @@ nav {
   background-size: cover;
 }
 
-.img__container {
-  position: relative;
-}
-
-.img__container > img {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  box-shadow: 0 0 6px #9E9E9E;
-}
-
-.img__description {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
 .carousel-control-next-icon {
-  background-image: url("/img/Button_right.svg");
+  background-image: url("/img/Button_right.svg") !important;
   width: 4rem;
   height: 4rem;
 }
 
 .carousel-control-prev-icon {
-  background-image: url("/img/Button_left.svg");
+  background-image: url("/img/Button_left.svg") !important;
   width: 4rem;
   height: 4rem;
 }
@@ -216,12 +193,12 @@ li {
     background-size: cover;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1025px) {
   .make-end {
     text-align: end;
   }
 }
-@media (max-width: 1224px) {
+@media (max-width: 1024px) {
   .space {
     display: none;
   }

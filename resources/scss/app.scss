@@ -48,12 +48,12 @@ nav {
 }
 
 .carousel-control-next-icon {
-    background-image: url("/img/Button_right.svg");
+    background-image: url("/img/Button_right.svg") !important;
     width: 4rem;
     height: 4rem;
 }
 .carousel-control-prev-icon {
-    background-image: url("/img/Button_left.svg");
+    background-image: url("/img/Button_left.svg") !important;
     width: 4rem;
     height: 4rem;
 }

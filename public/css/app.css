@@ -39,10 +39,6 @@ nav {
   color: darkgray;
 }
 
-.container-fluid {
-  padding: 0px;
-}
-
 .burger {
   background: url("/img/Menu.png");
   width: 42px;

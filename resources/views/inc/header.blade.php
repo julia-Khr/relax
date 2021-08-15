@@ -7,8 +7,8 @@
                     <button class="navbar-toggler burger" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">
                     </button>
-                </div>
-                <div class="col-lg-10 col-md-10">
+                 </div>
+                 <div class="col-lg-10 col-md-10">
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-between">
                             <li class="nav-item">
@@ -31,7 +31,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                 </div>
             </div>
         </div>
     </nav>

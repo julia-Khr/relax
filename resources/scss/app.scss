@@ -1,7 +1,19 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+.background-img {
+    background: url('/img/tourist.png') no-repeat center center;
+    background-attachment: scroll;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+
+}
+
 
 header {
     width: 100%;
@@ -42,6 +54,134 @@ nav {
     height: 42px;
     background-size: cover;
 }
+.enterprise_name {
+    font-family: Montserrat!important;
+    font-style: normal;
+    font-weight: bold!important;
+    font-size: 1rem!important;
+}
+
+.trips {
+    font-family: Montserrat!important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px!important;
+    line-height: 78px;
+    color: #000000;
+    text-align: center;
+}
+
+.event_header {
+    font-family: Californian FB!important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px!important;
+    line-height: 55px;
+    color: #FFFFFF!important;
+}
+
+
+.event {
+    display: flex;
+    font-family: Californian FB!important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    color: #FFFFFF!important;
+    justify-content: center;
+}
+
+.event_elements {
+    text-align: center;
+}
+
+.line {
+    border-left: 2px solid #FFFFFF;
+    height: 65px;
+    margin: 0 5px;
+
+}
+
+.join_button {
+    width: 225px;
+    background: #FF931E;
+    border-radius: 60px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    height: 55px;
+    border: none;
+    margin-top: 20px;
+}
+
+.join_button:hover {
+    background: #FF6600;
+}
+
+.wrap {
+    background: rgba(160, 160, 160, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+
+}
+
+.wrap:hover {
+    background: rgba(160, 160, 160, 0.3);
+    backdrop-filter: blur(20px);
+    text-decoration: none;
+}
+
+.event_header_sec {
+    font-family: Montserrat!important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    color: #FFFFFF!important;
+    text-align: center;
+}
+
+.advantage_name {
+    font-family: Montserrat!important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+}
+
+.event_date {
+    font-family: Californian FB!important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+.advantages {
+    width: 80px;
+    height: 80px;
+}
+
+.box{
+    position:relative;
+    height: 100%;
+    }
+    .events{
+        width:100%;
+    }
+
 
 .img__container {
     position: relative;
@@ -68,26 +208,26 @@ nav {
     border-bottom-right-radius: 4px;
   }
 .carousel-control-next-icon {
-    background-image: url("/img/Button_right.svg");
-    width: 4rem;
-    height: 4rem;
+    background-image: url("/img/Button_right.svg")!important;
+    width: 4rem!important;
+    height: 4rem!important;
 }
 .carousel-control-prev-icon {
-    background-image: url("/img/Button_left.svg");
-    width: 4rem;
-    height: 4rem;
+    background-image: url("/img/Button_left.svg")!important;
+    width: 4rem!important;
+    height: 4rem!important;
 }
 .name_enterprise {
     position: absolute;
     margin-left: 3%;
     margin-top: -13%;
-    font-size: 1rem;
+    font-size: 1rem!important;
 }
 
 footer {
     position: relative;
     width: 100%;
-    height: 320px;
+    height: fit-content;
     background-color: #177e1c;
 }
 
@@ -181,7 +321,21 @@ li {
     border: 0;
     padding: 0;
 }
-
+@media (max-width: 1224px) {
+    .display-none {
+        display: none;
+    }
+}
+@media (min-width: 1025px) {
+    .make-end {
+        text-align: end;
+    }
+}
+@media (max-width: 1024px) {
+    .space {
+        display: none;
+    }
+}
 @media (min-width: 768px) {
     .logo {
         background: url("/img/Logoleft.png");
@@ -209,19 +363,60 @@ li {
         height: 55px;
         background-size: cover;
     }
-}
-@media (min-width: 1025px) {
-    .make-end {
-        text-align: end;
+    .background-img {
+        background: url('/img/female_hiker.png') no-repeat center center;
+        background-attachment: scroll;
+        background-size: cover;
+        width: 100%;
+        padding-top: 100px;
+        border-radius: 0 0 40px 40px;
+
     }
-}
-@media (max-width: 1024px) {
-    .space {
+
+    .events {
         display: none;
     }
-}
-@media (max-width: 1224px) {
-    .display-none {
-        display: none;
+
+    .closest_event_button {
+        background: #177E1C;
+        border-radius: 16px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFFFFF;
+        height: 50px;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .all_events_button {
+        background: #177E1C;
+        border-radius: 16px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFFFFF;
+        height: 50px;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .advantages {
+        width: 60px;
+        height: 60px;
     }
 }
+@media (max-width:425px) {
+    .advantages {
+        width: 50px;
+        height: 50px;
+    }
+    h5{
+        font-size:12px;
+    }
+    }
+
+
+

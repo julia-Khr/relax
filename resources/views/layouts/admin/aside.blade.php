@@ -68,13 +68,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{route('events.index')}}" class="nav-link">
                  <i class="fas fa-binoculars"></i>
                   <p>Показати</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{route('events.create')}}" class="nav-link">
                  <i class="far fa-calendar-plus"></i>
                   <p>Створити нову</p>
                 </a>

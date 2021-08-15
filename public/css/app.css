@@ -9,7 +9,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: -86px;
   z-index: 50;
 }
 
@@ -22,16 +21,12 @@ nav {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 29px;
 }
 
 .nav-link:hover {
   color: darkgray;
-}
-
-.container-fluid {
-  padding: 0px;
 }
 
 .burger {
@@ -179,7 +174,7 @@ li {
     backdrop-filter: blur(20px);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .navbar-collapse {
     background-color: rgba(160, 160, 160, 0.2);
     -webkit-backdrop-filter: blur(20px);

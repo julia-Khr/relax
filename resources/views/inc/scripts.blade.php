@@ -38,12 +38,14 @@
     burgerBtn.addEventListener('click', (e) => {
         document.body.classList.toggle('opened');
         burgerBtn.classList.add('arrow');
+        document.getElementsByTagName("body")[0].style.overflow = "hidden";
     })
 
     burgerBtn.addEventListener('click', (e) => {
         const navbar_is_active = document.body.classList.contains('opened');
         if (!navbar_is_active) {
             burgerBtn.classList.remove('arrow');
+            document.getElementsByTagName("body")[0].style.overflow = "scroll";
         }
     });
 </script>

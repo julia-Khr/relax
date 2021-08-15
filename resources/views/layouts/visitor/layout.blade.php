@@ -8,7 +8,6 @@
     @include('inc.header')
     <section class="content">
         @yield('content')
-        @include('inc.carousel')
     </section>
     @include('inc.footer')
 @include('inc.scripts')

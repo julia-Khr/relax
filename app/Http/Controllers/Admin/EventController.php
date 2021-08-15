@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\Enterprise;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -15,7 +16,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::orderBy('id', 'desc')->get();
+        $enterprises = Enterprise::get();
+        return view('admin.events.index', compact('events', 'enterprises'));
     }
 
     /**
@@ -25,7 +28,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.events.form');
     }
 
     /**
@@ -36,7 +39,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Event::create($request->all());
+        return redirect()->back()->withSuccess('Створено подію : ' . $request->name);
     }
 
     /**
@@ -47,7 +52,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+
     }
 
     /**
@@ -58,7 +63,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('admin.events.form', compact('event'));
     }
 
     /**
@@ -70,7 +75,8 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->update($request->only(['name', 'description','start_date', 'finish_date', 'enterprise_id']));
+        return redirect()->back()->withSuccess('Оновлена подія '.$event->name);
     }
 
     /**
@@ -81,6 +87,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect()->route('events.index')->withDanger('Видалена подія '.$event->name);
     }
 }

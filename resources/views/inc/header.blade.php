@@ -36,22 +36,5 @@
         </div>
     </nav>
 </header>
-<script>
-    const burgerBtn = document.querySelector('.navbar-toggler')
 
-    burgerBtn.addEventListener('click', (e) => {
-        document.body.classList.toggle('opened');
-        burgerBtn.classList.add('arrow');
-    })
 
-    burgerBtn.addEventListener('click', (e) => {
-        const navbar_is_active = document.body.classList.contains('opened');
-        if (!navbar_is_active) {
-            burgerBtn.classList.remove('arrow');
-        }
-    });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>

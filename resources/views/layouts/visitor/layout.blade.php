@@ -6,15 +6,10 @@
 </head>
 <body>
     @include('inc.header')
-<<<<<<< HEAD
-    <section class="content" style="height: 1000px">
-=======
     <section class="content">
->>>>>>> main
         @yield('content')
 
     </section>
-    @include('inc.carousel')
     @include('inc.footer')
 @include('inc.scripts')
 </body>

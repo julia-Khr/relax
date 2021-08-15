@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.opened {
+    overflow: hidden;
+}
+
+.background-img {
+    background: url('tourist.png') no-repeat center center; 
+    background-attachment: scroll;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+nav {
+    width: 100%;
+
+}
+
+.nav-link {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+
+}
+
+.nav-link:hover {
+    color: darkgray;
+}
+
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 8vw;
+    line-height: 176px;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 78px;
+    color: #000000;
+    text-align: center;
+}
+
+h3 {
+    font-family: Californian FB;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px!;
+    color: #FFFFFF;
+}
+
+
+.event {
+    display: flex;
+    font-family: Californian FB;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.event_elements {
+    text-align: center;
+}
+
+.line {
+    border-left: 2px solid #FFFFFF;
+    height: 65px;
+    margin: 0 5px;
+
+}
+
+.join_button {
+    width: 225px;
+    background: #FF931E;
+    border-radius: 60px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    height: 55px;
+    border: none;
+    margin-top: 20px;
+}
+
+.join_button:hover {
+    background: #FF6600;
+}
+
+.wrapper {
+    background: rgba(160, 160, 160, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+
+}
+
+.wrapper:hover {
+    background: rgba(160, 160, 160, 0.3);
+    backdrop-filter: blur(20px);
+    text-decoration: none;
+}
+
+h4 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+h5 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+}
+
+.event_date {
+    font-family: Californian FB;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+.burger {
+    background: url('Menu.png');
+    width: 42px;
+    height: 42px;
+    background-size: cover;
+}
+
+.arrow {
+    background: url('arrow.png');
+    width: 42px;
+    height: 42px;
+    background-size: cover;
+}
+
+.advantages {
+    width: 80px;
+    height: 80px;
+}
+
+@media (min-width:768px) {
+
+    .logo {
+        background: url('Logoleft.png');
+        width: 80px;
+        height: 55px;
+        background-size: cover;
+    }
+
+    nav {
+        background-color: rgba(160, 160, 160, 0.2);
+        backdrop-filter: blur(20px);
+    }
+}
+
+@media (max-width:767.98px) {
+    .navbar-collapse {
+        background-color: rgba(160, 160, 160, 0.2);
+        backdrop-filter: blur(20px);
+    }
+
+    .logo {
+        background: url('Logoright.png');
+        width: 80px;
+        height: 55px;
+        background-size: cover;
+    }
+
+    .background-img {
+        background: url('female_hiker.png') no-repeat center center;
+        background-attachment: scroll;
+        background-size: cover;
+        width: 100%;
+        padding-top: 100px;
+        border-radius: 0 0 40px 40px;
+
+    }
+
+    .events {
+        display: none;
+    }
+
+    .closest_event_button {
+        background: #177E1C;
+        border-radius: 16px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFFFFF;
+        height: 50px;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .all_events_button {
+        background: #177E1C;
+        border-radius: 16px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFFFFF;
+        height: 50px;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .advantages {
+        width: 60px;
+        height: 60px;
+    }
+  
+
+}
+@media (max-width:425px) {
+    .advantages {
+        width: 50px;
+        height: 50px;
+    }
+    h5{
+        font-size:12px;
+    }
+}
+.box{
+    position:relative;
+    height: 100%;
+/* display: flex;
+height:100%;
+justify-content: center;
+align-items: flex-end;
+width:100%; */
+
+}
+.events{
+    width:100%;
+}
+</style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <div class="row align-items-center" style="width:100%">
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-12 d-flex flex-row-reverse justify-content-between">
+                        <a href="" class="navbar-brand pt-0 mt-0 ms-0 mb-0 logo"></a>
+                        <button class="navbar-toggler burger" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">
+                        </button>
+                     </div> 
+                     <div class="col-lg-10 col-md-10"> 
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-between">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">Головна</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">Подорожі</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">Історія подій</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">Відгуки</a>
+                                </li>
+                                <li class="nav-item d-none d-sm-none d-md-block d-xxl-block d-xl-block d-lg-block">
+                                    <a href="" class="nav-link ">Контакти</a>
+                                </li>
+                                <li class="nav-item d-xxl-none d-xl-none d-lg-none d-md-none ">
+                                    <a href="" class="nav-link">Наші переваги</a>
+                                </li>
+                            </ul>
+                        </div>
+                     </div> 
+                </div> 
+            </div>
+        </nav>
+    </header>
+
+    <div class="background-img">
+        <div class="container-fluid box">
+        <div class="events">
+            <div class="row">
+                <div class="col-lg-7 col-md-7  mx-auto justify-content-start">
+                    <h1>IT Campaign</h1>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3  mx-auto">
+                    <a href="" class="wrapper">
+                        <h4>IT Bug</h4>
+                        <div class="event">
+                            <div class="event_elements mb-4">Start<br>15<br>July</div>
+                            <div class="line"></div>
+                            <div class="event_elements mb-4">Finish<br>18<br>2021</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7  mx-auto">
+                    <h3>Сімейний похід</h3>
+                    <div class="event justify-content-start">
+                        <div class="event_elements">Start<br>07<br>July</div>
+                        <div class="line"></div>
+                        <div class="event_elements">Finish<br>15<br>2021</div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 mx-auto">
+                    <a href="" class="wrapper">
+                        <h4>IT Carpathians</h4>
+                        <div class="event">
+                            <div class="event_elements">Start<br>20</div>
+                            <div class="line"></div>
+                            <div class="event_elements">Finish<br>23</div>
+                        </div>
+                        <p class="event_date">September 2021</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7  mx-auto">
+                    <button type="button" class="join_button">Приєднатися</button>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3  mx-auto">
+                    <a href="" class="wrapper">
+                        <h4>IT Dnister</h4>
+                        <div class="event">
+                            <div class="event_elements">Start<br>18</div>
+                            <div class="line"></div>
+                            <div class="event_elements">Finish<br>21</div>
+                        </div>
+                        <p class="event_date">August 2021</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;">
+            <button type="button" class="closest_event_button col-10 mx-auto">Найближча подія</button>
+            <button type="button" class="all_events_button col-10 mx-auto mb-4">Переглянути усі події</button>
+        </div>
+        </div>
+    </div>
+
+    <h2>Подорожі</h2>
+    <h2>Наші переваги</h2>
+    <div class="row  justify-content-center mx-auto" style="width:80%">
+        <div class="col-lg-2 col-md-2 col-4 mx-auto ">
+            <img src="Map.png" class="mx-auto d-block advantages">
+            <h5>Досвідчені екскурсоводи</h5>
+        </div>
+        <div class="col-lg-2 col-md-2 col-4 mx-auto justify-content-center">
+            <img src="bus.png" class="mx-auto d-block advantages">
+            <h5>Транспорт</h5>
+        </div>
+        <div class="col-lg-2 col-md-2 col-4 mx-auto justify-content-center">
+            <img src="medicina.png" class="mx-auto d-block advantages">
+            <h5>Медичне страхування</h5>
+        </div>
+        <div class="col-lg-2 col-md-2 col-4 mx-auto justify-content-center">
+            <img src="Photo.png" class="mx-auto d-block advantages">
+            <h5>Фото на згадку</h5>
+        </div>
+        <div class="col-lg-2 col-md-2 col-4 mx-auto justify-content-center">
+            <img src="Group.png" class="mx-auto d-block advantages">
+            <h5>Фото на згадку</h5>
+        </div>
+    </div>
+    <script>
+        const burgerBtn = document.querySelector('.navbar-toggler')
+
+        burgerBtn.addEventListener('click', (e) => {
+            document.body.classList.toggle('opened');
+            burgerBtn.classList.add('arrow');
+        })
+
+        burgerBtn.addEventListener('click', (e) => {
+            const navbar_is_active = document.body.classList.contains('opened');
+            if (!navbar_is_active) {
+                burgerBtn.classList.remove('arrow');
+            }
+        });
+    </script>
+</body>
+
+</html>

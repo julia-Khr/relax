@@ -32,22 +32,25 @@
 <script src="/admin/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/admin/dist/js/pages/dashboard.js"></script>
-<script>
+ <script>
     const burgerBtn = document.querySelector('.navbar-toggler')
 
     burgerBtn.addEventListener('click', (e) => {
         document.body.classList.toggle('opened');
         burgerBtn.classList.add('arrow');
+        document.getElementsByTagName("body")[0].style.overflow = "hidden";
     })
 
     burgerBtn.addEventListener('click', (e) => {
         const navbar_is_active = document.body.classList.contains('opened');
         if (!navbar_is_active) {
             burgerBtn.classList.remove('arrow');
+            document.getElementsByTagName("body")[0].style.overflow = "scroll";
         }
     });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+

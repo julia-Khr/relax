@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header">
             <div class="d-flex justify-content-center background-img">
-                <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat font-size:40px">Події</h1>
+                <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat; font-size:5vw">Події</h1>
             </div>
         </div>
         <div class="card-body p-0">
@@ -57,7 +57,7 @@
                             {{$event->enterprise_id}}
                         </td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" href="#">
+                            <a class="btn btn-primary btn-sm mb-2" href="#">
                                 <i class="fas fa-folder">
                                 </i>
                                 Переглянути

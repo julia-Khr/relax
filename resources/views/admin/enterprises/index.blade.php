@@ -79,14 +79,6 @@
                                             <i class="fas fa-trash">
                                                 Видалити</i>
                                         </button>
-
-
-                                        {{-- <button class='btn btn-xs btn-danger' type='button' data-toggle="modal"
-                                            data-target="#confirmDelete" data-title="Delete User"
-                                            data-message='Are you sure you want to delete this user ?'>
-                                            <i class='glyphicon glyphicon-trash'></i> Delete
-                                        </button> --}}
-
                                     </form>
 
                                 </td>

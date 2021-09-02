@@ -1,3 +1,5 @@
+
+
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -37462,5 +37464,5 @@ process.umask = function() { return 0; };
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/
-/******/ })()
-;
+/******/ })();
+

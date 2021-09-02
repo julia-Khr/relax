@@ -27,10 +27,8 @@
                         <input type="text" name="name" class="form-control" id="name" placeholder="Введіть назву"
                             value="{{ isset($enterprise) ? $enterprise->name : null }}">
                     </div>
-                    <div class="custom-file">
-
-                        <label class="custom-file-label" for="chooseFile">Виберіть файл</label>
-                        <input type="file" name="image_url" class="custom-file-input" id="chooseFile" placeholder="image">
+                    <div class="form-group">
+                        <input type="file" name="image_url" class="file-input" id="chooseFile" placeholder="image">
 
                     </div>
                     @if (isset($enterprise->image_url))

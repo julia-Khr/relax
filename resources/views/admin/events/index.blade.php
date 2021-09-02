@@ -48,10 +48,10 @@
                             {{$event->description}}
                         </td>
                         <td>
-                            {{$event->start_date}}
+                            {{ Carbon\Carbon::parse($event->start_date)->format('d-m-Y')}}
                         </td>
                         <td>
-                            {{$event->finish_date}}
+                            {{ Carbon\Carbon::parse($event->finish_date)->format('d-m-Y')}}
                         </td>
                         <td>
                             {{$event->enterprise_id}}

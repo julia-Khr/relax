@@ -35,7 +35,8 @@ class VisitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Visitor::create($request->only(['name', 'email', 'phone', 'event_id']));
+        return redirect()->back()->withSuccess('Ви зареєстровані на подію');
     }
 
     /**

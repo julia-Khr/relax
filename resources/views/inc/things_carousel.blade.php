@@ -1,5 +1,5 @@
     <h2 class="trips">З собою потрібно мати:</h2>
-    <div class="container display_md">
+    <div class="container display_md mb-2">
         <div class="row  justify-content-center mx-auto">
             <div class="col-xl-2 col-lg-3 col-md-3 col-4 mx-auto align-items-center">
                 <img src="/img/clothes.png" class="mx-auto d-block advantages mb-3">

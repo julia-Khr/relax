@@ -42,9 +42,8 @@
                     <div class="card-body">
                       <div class="form-group">
                         <label for="start_date">Дата початку</label>
-                        <input value="{{ old('start_date', isset($event) ? $event->name : null)}}"
-                        class="form-control form-control-md" type="date" name="start_date"
-                        placeholder="Введіть назву">
+                        <input value="{{ old('start_date', isset($event) ? $event->start_date : null)}}"
+                        class="form-control form-control-md" type="date" name="start_date">
                         @error('start_date')
                         <div class='alert alert-danger'>
                         {{$message}}</div>
@@ -52,9 +51,8 @@
                       </div>
                       <div class="form-group">
                           <label for="finish_date">Дата закінчення</label>
-                          <input value="{{ old('finish_date', isset($event) ? $event->name : null)}}"
-                          class="form-control form-control-md" type="date" name="finish_date"
-                          placeholder="Введіть назву">
+                          <input value="{{ old('finish_date', isset($event) ? $event->finish_date : null)}}"
+                          class="form-control form-control-md" type="date" name="finish_date">
                           @error('finish_date')
                           <div class='alert alert-danger'>
                           {{$message}}</div>

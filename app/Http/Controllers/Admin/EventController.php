@@ -16,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('id', 'desc')->get();
+        $events = Event::orderBy('id', 'desc')->latest()->paginate(5);
         $enterprises = Enterprise::get();
         return view('admin.events.index', compact('events', 'enterprises'));
     }
@@ -52,7 +52,6 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-
     }
 
     /**
@@ -75,8 +74,8 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        $event->update($request->only(['name', 'description','start_date', 'finish_date', 'enterprise_id']));
-        return redirect()->back()->withSuccess('Оновлена подія '.$event->name);
+        $event->update($request->only(['name', 'description', 'start_date', 'finish_date', 'enterprise_id']));
+        return redirect()->back()->withSuccess('Оновлена подія ' . $event->name);
     }
 
     /**
@@ -88,6 +87,6 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
-        return redirect()->route('events.index')->withDanger('Видалена подія '.$event->name);
+        return redirect()->route('events.index')->withDanger('Видалена подія ' . $event->name);
     }
 }

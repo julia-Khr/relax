@@ -15,7 +15,9 @@ class ResponseController extends Controller
      */
     public function index()
     {
-        //
+        $responsesCount = Response::all()->count();
+        $responses = Response::all();
+        return view('admin.responses.index', compact('responses'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ResponseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.responses.form');
     }
 
     /**
@@ -36,7 +38,9 @@ class ResponseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Response::create($request->only(['author_name', 'text', 'date', 'author_avatar_url', 'event_id']));
+
+        return redirect()->route('admin.responses.index')->withSuccess('New response was created');
     }
 
     /**
@@ -47,7 +51,7 @@ class ResponseController extends Controller
      */
     public function show(Response $response)
     {
-        //
+        return view('admin.responses.index', compact('response'));
     }
 
     /**
@@ -58,7 +62,7 @@ class ResponseController extends Controller
      */
     public function edit(Response $response)
     {
-        //
+        return view('admin.responses.form', compact('response'));
     }
 
     /**
@@ -70,7 +74,8 @@ class ResponseController extends Controller
      */
     public function update(Request $request, Response $response)
     {
-        //
+        Response::create($request->only(['author', 'text', 'date', 'avatar']));
+        return redirect()->route('admin.responses.index');
     }
 
     /**
@@ -81,6 +86,7 @@ class ResponseController extends Controller
      */
     public function destroy(Response $response)
     {
-        //
+        $response->delete();
+        return redirect()->route('admin.responses.index')->withSuccess('Deleted response  '.$response->author);
     }
 }

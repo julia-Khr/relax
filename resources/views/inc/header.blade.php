@@ -21,7 +21,8 @@
                                 <a href="" class="nav-link">Історія подій</a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Відгуки</a>
+                                <a href="" id="#responses" data-bs-toggle="modal" data-bs-target="#responses" class="nav-link">Відгуки</a>
+
                             </li>
                             <li class="nav-item d-none d-sm-none d-md-block d-xxl-block d-xl-block d-lg-block">
                                 <a href="" class="nav-link ">Контакти</a>
@@ -36,4 +37,6 @@
         </div>
     </nav>
 </header>
+
+
 

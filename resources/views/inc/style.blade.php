@@ -36,4 +36,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    .modal-backdrop{
+    background-color: transparent;
+}
 </style>

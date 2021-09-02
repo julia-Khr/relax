@@ -20,11 +20,7 @@
             <div class="display-none">
             <div class="mx-auto d-md-flex flex-row justify-content-center px-4">
                 <img src="/img/Vector.png" width="114px" height="93px">
-<<<<<<< HEAD
-                <h1 class="text-uppercase font-weight-bold" style="font-family: 'Montserrat', sans-serif; font-size: 43px; line-height: 114px">IT RELAX</h1>
-=======
                 <h1 class="text-uppercase font-weight-bold" style="font-family: 'Montserrat', sans-serif; font-size: 43px!important; line-height: 114px">IT RELAX</h1>
->>>>>>> main
             </div>
             <div class="text-center">
                  <p>Хочете бути в курсі усіх поїздок?</p>

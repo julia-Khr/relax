@@ -144,13 +144,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{route('responses.index')}}" class="nav-link">
                   <i class="fas fa-binoculars"></i>
                   <p>Показати</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{route('responses.create')}}" class="nav-link">
                   <i class="fas fa-plus-square"></i>
                   <p>Додати новий</p>
                 </a>

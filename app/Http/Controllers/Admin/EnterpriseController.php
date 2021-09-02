@@ -16,7 +16,7 @@ class EnterpriseController extends Controller
      */
     public function index()
     {
-        $enterprises = Enterprise::all();
+        $enterprises = Enterprise::latest()->paginate(5);
 
         return view('admin.enterprises.index', compact('enterprises'));
     }
@@ -39,8 +39,20 @@ class EnterpriseController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'image_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('image_url')) {
+            $destinationPath = 'image_url/';
+            $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $enterpriseImage);
+            $input['image_url'] = "$enterpriseImage";
+        }
 
-        Enterprise::create($request->only(['name', 'image_url']));
+        Enterprise::create($input);
+
         return redirect()->back()->withSuccess('Створено захід :' . $request->name);
     }
 
@@ -52,7 +64,7 @@ class EnterpriseController extends Controller
      */
     public function show(Enterprise $enterprise)
     {
-        //
+        return view('admin.enterprises.show', compact('enterprise'));
     }
 
     public function showEnterprise($id)
@@ -83,7 +95,24 @@ class EnterpriseController extends Controller
      */
     public function update(Request $request, Enterprise $enterprise)
     {
-        $enterprise->update($request->only(['name', 'image_url']));
+        $request->validate([
+            'name' => 'required',
+            'image_url' => 'required'
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('image_url')) {
+            $destinationPath = 'image_url/';
+            $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $enterpriseImage);
+            $input['image'] = "$enterpriseImage";
+        } else {
+            unset($input['image_url']);
+        }
+
+        $enterprise->update($input);
+
+        // $enterprise->update($request->only(['name', 'image_url']));
+
         return redirect()->back()->withSuccess('Оновлено захід: ' . $enterprise->name);
     }
 

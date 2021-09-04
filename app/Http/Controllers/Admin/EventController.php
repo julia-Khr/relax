@@ -17,9 +17,34 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::orderBy('id', 'desc')->latest()->paginate(5);
-        $enterprises = Enterprise::get();
-        return view('admin.events.index', compact('events', 'enterprises'));
+        return view('admin.events.index', compact('events'));
+
     }
+
+    // public function showEvent()
+    // {   $enterprise = Enterprise::find(1)->enterprises;
+    //     $enterprises = Enterprise::get();
+    //     $events = Event::orderBy('id', 'desc')->latest()->paginate(5);
+
+    // }
+
+    public function showEvent()
+    {
+
+        $enterprise = Enterprise::find(1)->enterprises;
+        $enterprises = Enterprise::get();
+        $events = Event::orderBy('start_date', 'asc')->take(3)->get();
+        return view('visitor.home.greeting', compact( 'events','enterprises'));
+    }
+
+    public function joinToEvent($id)
+    {
+        $enterprise = Enterprise::find(1)->enterprises;
+        $enterprises = Enterprise::get();
+        return view('visitor.home.join_form', [
+            'event' => Event::findOrFail($id)], compact('enterprises'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -52,6 +77,9 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
+        // $event = Event::find(1)->events;
+        // $events = Event::get();
+        // return view('visitor.home.greeting', compact('event'));
     }
 
     /**

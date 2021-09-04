@@ -38,7 +38,7 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        {{-- @include('layouts.visitor.header') --}}
+        @include('inc.navbar_admin')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Response;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class ResponseController extends Controller
@@ -15,8 +16,7 @@ class ResponseController extends Controller
      */
     public function index()
     {
-        $responsesCount = Response::all()->count();
-        $responses = Response::all();
+        $responses = Response::latest()->paginate(5);
         return view('admin.responses.index', compact('responses'));
     }
 
@@ -27,7 +27,8 @@ class ResponseController extends Controller
      */
     public function create()
     {
-        return view('admin.responses.form');
+        $events = Event::select('id', 'name')->get();
+        return view('admin.responses.form', compact('events'));
     }
 
     /**
@@ -38,9 +39,27 @@ class ResponseController extends Controller
      */
     public function store(Request $request)
     {
-        Response::create($request->only(['author_name', 'text', 'date', 'author_avatar_url', 'event_id']));
 
-        return redirect()->route('admin.responses.index')->withSuccess('New response was created');
+        $request->validate([
+            'author_name' => 'required',
+            'text' => 'required',
+            'date' => 'required',
+            'event_id' => 'required',
+            'author_avatar_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $input = $request->all();
+
+        if ($image = $request->file('author_avatar_url')) {
+            $destinationPath = 'author_avatar_url/';
+            $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $enterpriseImage);
+            $input['author_avatar_url'] = "$enterpriseImage";
+        }
+
+        Response::create($input);
+
+        return redirect()->back()->withSuccess('Додано відгук:' . $request->author_name);
     }
 
     /**
@@ -62,7 +81,8 @@ class ResponseController extends Controller
      */
     public function edit(Response $response)
     {
-        return view('admin.responses.form', compact('response'));
+        $events = Event::select('id', 'name')->get();
+        return view('admin.responses.form', compact('response', 'events'));
     }
 
     /**
@@ -74,8 +94,27 @@ class ResponseController extends Controller
      */
     public function update(Request $request, Response $response)
     {
-        Response::create($request->only(['author', 'text', 'date', 'avatar']));
-        return redirect()->route('admin.responses.index');
+        $request->validate([
+            'author_name' => 'required',
+            'text' => 'required',
+            'date' => 'required',
+            'event_id' => 'required',
+            'author_avatar_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('author_avatar_url')) {
+            $destinationPath = 'author_avatar_url/';
+            $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $enterpriseImage);
+            $input['author_avatar_url'] = "$enterpriseImage";
+        } else {
+            unset($input['author_avatar_url']);
+        }
+
+        $response->update($input);
+
+
+        return redirect()->back()->withSuccess('Оновлено відгук: ' . $response->author_name);
     }
 
     /**
@@ -87,6 +126,6 @@ class ResponseController extends Controller
     public function destroy(Response $response)
     {
         $response->delete();
-        return redirect()->route('admin.responses.index')->withSuccess('Deleted response  '.$response->author);
+        return redirect()->route('responses.index')->withSuccess('Відгук  '. $response->author_name .'  видалено!');
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\EnterpriseController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ThingController;
 use App\Http\Controllers\Admin\ResponseController;
+use App\Http\Controllers\Visitor\CardController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\VisitorController;
@@ -34,11 +35,12 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::resource('/enterprises', EnterpriseController::class);
     Route::resource('/events', EventController::class);
     // Route::resource('things', ThingController::class);
-    Route::resource('/responses', ResponseController::class);
+    Route::resource('/admin/responses', ResponseController::class);
+
     // Route::resource('photos', PhotoController::class);
     // Route::resource('subscriptions', SubscriptionController::class);
     // Route::resource('visitors', VisitorController::class);
 });
 Route::view('/test', 'visitor.home.index');
-Route::view('/card', 'visitor.home.greeting');
-Route::view('/responses', 'visitor.home.responses');
+// Route::view('/card', 'visitor.home.greeting');
+Route::resource('/card', CardController::class);

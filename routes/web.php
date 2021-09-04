@@ -40,19 +40,14 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::resource('/enterprises', EnterpriseController::class);
     Route::resource('/events', EventController::class);
     // Route::resource('things', ThingController::class);
-    // Route::resource('responses', ResponseController::class);
+    Route::resource('responses', ResponseController::class);
     // Route::resource('photos', PhotoController::class);
     // Route::resource('subscriptions', SubscriptionController::class);
      Route::resource('visitors', VisitorController::class);
 });
-<<<<<<< HEAD
-Route::view('/test', 'visitor.home.index');
-Route::view('/card', 'visitor.home.greeting');
-=======
 
 // Route::get('/events', 'App\Http\Controllers\Admin\EventController@show');
 
 // Route::view('/join', 'visitor.home.join_form');
 // Route::view('/card', 'visitor.home.greeting');
 
->>>>>>> 222f43f7eed61823e898c40fd3ab5d930189b23e

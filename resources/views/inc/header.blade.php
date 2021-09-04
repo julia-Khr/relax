@@ -10,9 +10,9 @@
                  </div>
                  <div class="col-lg-10 col-md-10">
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-between">
+                        <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-around">
                             <li class="nav-item">
-                                <a href="" class="nav-link">Головна</a>
+                                <a href="/card" class="nav-link">Головна</a>
                             </li>
                             <li class="nav-item">
                                 <a href="" class="nav-link">Подорожі</a>

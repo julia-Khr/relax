@@ -8,71 +8,39 @@
         <div class="row">
             <div class="col-lg-7 col-md-7  mx-auto justify-content-start">
                 <h1 class="enterprise_name" style="color:#FFFFFF;font-size: 7vw;">IT Campaign</h1>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-3  mx-auto">
-                 <a href="" class="wrap">
-                    <h4 class="event_header_sec">IT Bug</h4>
-                    <div class="event">
-                        <div class="event_elements mb-4">Start<br>15<br>July</div>
-                        <div class="line"></div>
-                        <div class="event_elements mb-4">Finish<br>18<br>2021</div>
-                    </div>
-                </a>
-                {{-- <a href="" class="wrap">
-                    @forelse($events->orderBy('start_date', 'desc')->get()  as $event)
-                    <h4>{{$event->name}}</h4>
-                    <div class="event">
-                        <div class="event_elements mb-4">Start<br>{{$event->start_date}}</div>
-                        <div class="line"></div>
-                        <div class="event_elements mb-4">Finish<br>{{$event->finish_date}}</div>
-                    </div>
-                  @empty
-                  <h3 class="text-center">Події відсутні</h3>
-                  @endforelse
-                </a> --}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-7 col-md-7  mx-auto">
-                <h3 class="event_header">Сімейний похід</h3>
+
+            {{-- </div>
+
+            <div class="col-lg-7 col-md-7  mx-auto"> --}}
+
+                {{-- <h3 class="event_header">{{$event->name}}</h3>
                 <div class="event justify-content-start">
-                    <div class="event_elements">Start<br>07<br>July</div>
+                    <div class="event_elements">Start<br>{{( Carbon\Carbon::parse($event->start_date)->format('d F Y'))}}</div>
                     <div class="line"></div>
-                    <div class="event_elements">Finish<br>15<br>2021</div>
+                    <div class="event_elements">Finish<br>{{( Carbon\Carbon::parse($event->finish_date)->format('d F Y'))}}</div>
+                </div> --}}
+
+            {{-- </div>
+            <div class="col-lg-7 col-md-7  mx-auto"> --}}
+                <button onclick="document.location='/join'" type="button" class="join_button">Приєднатися</button>
+            </div>
+
+            <div class="col-xl-2 col-lg-3 col-md-3 mx-auto">
+                @foreach($events as $event)
+                 <a href="/enterprise/{{$event->enterprise_id}}" class="wrap">
+                    <h4 class="event_header_sec">{{$enterprises[$event->enterprise_id-1]->name}}</h4>
+                    <div class="event">
+                        <div class="event_elements mb-4">Start<br>{{( Carbon\Carbon::parse($event->start_date)->format('d F Y'))}}</div>
+                        <div class="line"></div>
+                        <div class="event_elements mb-4">Finish<br>{{( Carbon\Carbon::parse($event->finish_date)->format('d F Y'))}}</div>
+                    </div>
+                    </a>
+                @endforeach
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-3 col-md-3 mx-auto">
-                <a href="" class="wrap">
-                    <h4 class="event_header_sec">IT Carpathians</h4>
-                    <div class="event">
-                        <div class="event_elements">Start<br>20</div>
-                        <div class="line"></div>
-                        <div class="event_elements">Finish<br>23</div>
-                    </div>
-                    <p class="event_date">September 2021</p>
-                </a>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-lg-7 col-md-7  mx-auto">
-                <button type="button" class="join_button">Приєднатися</button>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-3  mx-auto">
-                <a href="" class="wrap">
-                    <h4 class="event_header_sec">IT Dnister</h4>
-                    <div class="event">
-                        <div class="event_elements">Start<br>18</div>
-                        <div class="line"></div>
-                        <div class="event_elements">Finish<br>21</div>
-                    </div>
-                    <p class="event_date">August 2021</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;">
-        <button type="button" class="closest_event_button col-10 mx-auto">Найближча подія</button>
+        <button type="button" class="closest_event_button col-10 mx-auto mb-2">Найближча подія</button>
         <button type="button" class="all_events_button col-10 mx-auto mb-4">Переглянути усі події</button>
     </div>
     </div>

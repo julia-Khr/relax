@@ -27,11 +27,11 @@ nav {
 }
 
 .nav-link {
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 16px !important;
   line-height: 29px;
 }
 
@@ -85,7 +85,7 @@ nav {
   font-weight: bold;
   font-size: 24px;
   line-height: 35px;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   justify-content: center;
 }
 
@@ -94,7 +94,8 @@ nav {
 }
 
 .line {
-  border-left: 2px solid #FFFFFF;
+  border-left: 2px solid;
+  color: #fff;
   height: 65px;
   margin: 0 5px;
 }
@@ -111,6 +112,7 @@ nav {
   height: 55px;
   border: none;
   margin-top: 20px;
+  margin-top: 200px;
 }
 
 .join_button:hover {
@@ -177,6 +179,31 @@ nav {
 
 .events {
   width: 100%;
+}
+
+.img__container {
+  position: relative;
+  margin: 20px auto 30px auto;
+}
+
+.img__container > img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #9E9E9E;
+  border: 4px solid #fff;
+}
+
+.img__description {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .carousel-control-next-icon {
@@ -298,6 +325,47 @@ li {
   padding: 0;
 }
 
+.things__wrapper {
+  background: #66AA69;
+  border-radius: 16px;
+  height: 80%;
+}
+
+.things__wrapper > ul {
+  list-style-type: none;
+  font-family: Californian FB;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding-left: 1rem;
+}
+
+.form_frame {
+  background: rgba(160, 160, 160, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  padding: 30px;
+}
+
+.input_frame {
+  background: #D2D2D2;
+  border: 1px solid #FF931E;
+  box-sizing: border-box;
+  border-radius: 60px;
+  width: 100%;
+  height: 50px;
+}
+
+.placeholder_style {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+
 @media (max-width: 1224px) {
   .display-none {
     display: none;
@@ -384,6 +452,10 @@ li {
     width: 60px;
     height: 60px;
   }
+
+  .display_md {
+    display: none;
+  }
 }
 @media (max-width: 425px) {
   .advantages {
@@ -391,7 +463,7 @@ li {
     height: 50px;
   }
 
-  h5 {
+  .advantage_name {
     font-size: 12px;
   }
 }

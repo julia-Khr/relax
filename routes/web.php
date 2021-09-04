@@ -29,6 +29,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/card', 'App\Http\Controllers\Admin\EventController@showEvent');
+
+Route::get('/enterprise/{id}', 'App\Http\Controllers\Admin\EnterpriseController@showEnterprise');
+
+Route::get('/event/{id}', 'App\Http\Controllers\Admin\EventController@joinToEvent');
+
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
     Route::resource('/enterprises', EnterpriseController::class);
@@ -37,7 +43,16 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     // Route::resource('responses', ResponseController::class);
     // Route::resource('photos', PhotoController::class);
     // Route::resource('subscriptions', SubscriptionController::class);
-    // Route::resource('visitors', VisitorController::class);
+     Route::resource('visitors', VisitorController::class);
 });
+<<<<<<< HEAD
 Route::view('/test', 'visitor.home.index');
 Route::view('/card', 'visitor.home.greeting');
+=======
+
+// Route::get('/events', 'App\Http\Controllers\Admin\EventController@show');
+
+// Route::view('/join', 'visitor.home.join_form');
+// Route::view('/card', 'visitor.home.greeting');
+
+>>>>>>> 222f43f7eed61823e898c40fd3ab5d930189b23e

@@ -14,7 +14,6 @@
 
 }
 
-
 header {
     width: 100%;
     position: absolute;
@@ -29,11 +28,11 @@ nav {
 }
 
 .nav-link {
-    color: #ffffff;
+    color: #ffffff!important;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 16px!important;
     line-height: 29px;
 }
 
@@ -58,7 +57,6 @@ nav {
     font-family: Montserrat!important;
     font-style: normal;
     font-weight: bold!important;
-    font-size: 1rem!important;
 }
 
 .trips {
@@ -88,7 +86,7 @@ nav {
     font-weight: bold;
     font-size: 24px;
     line-height: 35px;
-    color: #FFFFFF!important;
+    color: #FFFFFF;
     justify-content: center;
 }
 
@@ -97,7 +95,8 @@ nav {
 }
 
 .line {
-    border-left: 2px solid #FFFFFF;
+    border-left: 2px solid;
+    color:#fff;
     height: 65px;
     margin: 0 5px;
 
@@ -115,6 +114,7 @@ nav {
     height: 55px;
     border: none;
     margin-top: 20px;
+    margin-top: 200px;
 }
 
 .join_button:hover {
@@ -131,6 +131,26 @@ nav {
     text-decoration: none;
 
 }
+
+// .wrap:nth-child(1){
+//     margin-left: -780px;
+//     margin-right: 326px;
+//     width: 276px;
+//     margin-top: 100px;
+//     background: none;
+//     backdrop-filter: none;
+// }
+
+// .wrap:nth-child(1):hover{
+//     background: none;
+//     backdrop-filter: none;
+//     text-decoration: none;
+
+// }
+
+// .wrap:nth-child(2){
+//     margin-top: -300px;
+// }
 
 .wrap:hover {
     background: rgba(160, 160, 160, 0.3);
@@ -178,6 +198,7 @@ nav {
     position:relative;
     height: 100%;
     }
+
     .events{
         width:100%;
     }
@@ -321,6 +342,47 @@ li {
     border: 0;
     padding: 0;
 }
+
+.things__wrapper {
+    background: #66AA69;
+    border-radius: 16px;
+    height: 80%;
+}
+
+.things__wrapper>ul {
+    list-style-type: none;
+    font-family: Californian FB;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding-left: 1rem;
+}
+
+.form_frame {
+    background: rgba(160, 160, 160, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+}
+
+.input_frame {
+    background: #D2D2D2;
+    border: 1px solid #FF931E;
+    box-sizing: border-box;
+    border-radius: 60px;
+    width: 100%;
+    height: 50px;
+}
+
+.placeholder_style {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
 @media (max-width: 1224px) {
     .display-none {
         display: none;
@@ -407,13 +469,16 @@ li {
         width: 60px;
         height: 60px;
     }
+    .display_md {
+        display: none;
+    }
 }
 @media (max-width:425px) {
     .advantages {
         width: 50px;
         height: 50px;
     }
-    h5{
+    .advantage_name{
         font-size:12px;
     }
     }

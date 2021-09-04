@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Enterprise;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EnterpriseController extends Controller
@@ -64,6 +65,14 @@ class EnterpriseController extends Controller
     public function show(Enterprise $enterprise)
     {
         return view('admin.enterprises.show', compact('enterprise'));
+    }
+
+    public function showEnterprise($id)
+    {
+        $events = Event::where('enterprise_id', $id)->get();
+        return view('visitor.home.enterprise_page', [
+            'enterprise' => Enterprise::findOrFail($id)
+        ],  compact('events'));
     }
 
     /**

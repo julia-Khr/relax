@@ -3,6 +3,17 @@
 @section('title', 'Відгуки')
 
 @section('content')
+<div class="card-header">
+    <div class="d-flex flex-column text-center background-img">
+        <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat; font-size:5vw">Відгуки</h1>
+        <div>
+            <a href="{{route('responses.create')}}" class="nav-link font-size-for-create">
+                <i class="fas fa-plus-square"></i>
+                <p>Додати новий</p>
+              </a>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
       <tr>
@@ -12,8 +23,8 @@
         <th scope="col">Аватар</th>
         <th scope="col">Текст</th>
         <th scope="col">Дата</th>
-        <th scope="col">Action</th>
-        <th scope="col">Action</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>

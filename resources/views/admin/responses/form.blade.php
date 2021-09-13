@@ -38,7 +38,7 @@
         <div class="mb-3">
         <input name="author_name"
                value="{{isset($response) ? $response->author_name : null}}"
-               type="text" id="Author" class="form-control" placeholder="Author" aria-label="author_name">
+               type="text" id="Author" class="form-control" placeholder="Автор" aria-label="author_name">
                @error('author_name')<div class="panel alert-danger">{{$message}}</div>
 
                @enderror
@@ -53,9 +53,8 @@
         </div>
 
         <div class="mb-3">
-        <input name="text"
-               value="{{isset($response) ? $response->text : null}}"
-               type="text" id="Text" class="form-control" placeholder="Text" aria-label="text">
+        <textarea name="text"
+               type="text" id="Text" class="form-control" placeholder="Введіть відгук" aria-label="text">{{isset($response) ? $response->text : null}}</textarea>
                @error('text')<div class="panel alert-danger">{{$message}}</div>
 
                @enderror

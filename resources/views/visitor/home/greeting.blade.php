@@ -3,7 +3,7 @@
 @section('title', 'Home page')
 @section('content')
 <div class="background-img">
-    <div class="container-fluid box">
+    <div class="container-fluid box " id="myElement">
     <div class="events">
         <div class="row">
             <div class="col-lg-7 col-md-7  mx-auto justify-content-start">
@@ -25,10 +25,10 @@
                 <button onclick="document.location='/join'" type="button" class="join_button">Приєднатися</button>
             </div>
 
-            <div class="col-xl-2 col-lg-3 col-md-3 mx-auto">
+            <div  id="myElement" class="col-xl-2 col-lg-3 col-md-3 mx-auto handle">
                 @foreach($events as $event)
                  <a href="/enterprise/{{$event->enterprise_id}}" class="wrap">
-                    <h4 class="event_header_sec">{{$enterprises[$event->enterprise_id-1]->name}}</h4>
+                    <h4 class="event_header_sec">{{$event->enterprise->name}}</h4>
                     <div class="event">
                         <div class="event_elements mb-4">Start<br>{{( Carbon\Carbon::parse($event->start_date)->format('d F Y'))}}</div>
                         <div class="line"></div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-    <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;">
+    <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;" id="myElement">
         <button type="button" class="closest_event_button col-10 mx-auto mb-2">Найближча подія</button>
         <button type="button" class="all_events_button col-10 mx-auto mb-4">Переглянути усі події</button>
     </div>
@@ -49,7 +49,7 @@
 <h2 class="trips">Подорожі</h2>
 @include('inc.carousel')
     <h2 class="trips">Наші переваги</h2>
-    <div class="row  justify-content-center mx-auto" style="width:80%">
+    <div id="myElement" class="row  justify-content-center mx-auto" style="width:80%">
         <div class="col-lg-2 col-md-2 col-4 mx-auto ">
             <img src="/img/Map.png" class="mx-auto d-block advantages">
             <h5 class="advantage_name">Досвідчені екскурсоводи</h5>
@@ -73,3 +73,4 @@
     </div>
 
 @endsection
+

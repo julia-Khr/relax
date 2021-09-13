@@ -12,22 +12,22 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav container d-flex flex-column flex-md-row justify-content-around">
                             <li class="nav-item">
-                                <a href="/card" class="nav-link">Головна</a>
+                                <a href="/card" class="nav-link ">Головна</a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Подорожі</a>
+                                <a href="" class="nav-link white-link">Подорожі</a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Історія подій</a>
+                                <a href="" class="nav-link ">Історія подій</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="" id="#responses" data-bs-toggle="modal" data-bs-target="#responses" class="nav-link">Відгуки</a>
+                            <li class="nav-item ">
+                                <a href="#" onclick="changeStyle()" id="#responses" data-bs-toggle="modal" data-bs-target="#responses" class="nav-link wind">Відгуки</a>
 
                             </li>
-                            <li class="nav-item d-none d-sm-none d-md-block d-xxl-block d-xl-block d-lg-block">
+                            <li class="nav-item  d-none d-sm-none d-md-block d-xxl-block d-xl-block d-lg-block">
                                 <a href="" class="nav-link ">Контакти</a>
                             </li>
-                            <li class="nav-item d-xxl-none d-xl-none d-lg-none d-md-none ">
+                            <li class="nav-item  d-xxl-none d-xl-none d-lg-none d-md-none ">
                                 <a href="" class="nav-link">Наші переваги</a>
                             </li>
                         </ul>
@@ -37,6 +37,7 @@
         </div>
     </nav>
 </header>
+
 
 
 

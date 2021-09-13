@@ -26,7 +26,7 @@
                  <p>Хочете бути в курсі усіх поїздок?</p>
             </div>
             <div class="row justify-content-center">
-                <form class="search-wrapper cf">
+                <form class="search-wrapper px-0 cf">
                     <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail"
                      style="border-radius: 20px; box-shadow: none">
                     <button type="submit">Відправити</button>

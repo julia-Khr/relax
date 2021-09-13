@@ -35,58 +35,32 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link ">
+            <a href="{{route('enterprises.index')}}" class="nav-link ">
                <i class="nav-icon fas fa-campground"></i>
               <p>
                 Заходи
-                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('enterprises.index')}}" class="nav-link">
-                    <i class="fas fa-binoculars"></i>
-                  <p>Показати</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('enterprises.create')}}" class="nav-link">
-                    <i class="far fa-calendar-plus"></i>
-                  <p>Створити новий</p>
-                </a>
-              </li>
-            </ul>
+
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link ">
+            <a href="{{route('events.index')}}" class="nav-link ">
                 <i class="nav-icon fas fa-hiking"></i>
               {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
               <p>
                 Події
-                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('events.index')}}" class="nav-link">
-                 <i class="fas fa-binoculars"></i>
-                  <p>Показати</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('events.create')}}" class="nav-link">
-                 <i class="far fa-calendar-plus"></i>
-                  <p>Створити нову</p>
-                </a>
-              </li>
-            </ul>
+
           </li>
            <li class="nav-item">
             <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-clipboard-list"></i>
               <p>
                 Речі
-                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -116,7 +90,7 @@
                 <i class="nav-icon far fa-images"></i>
               <p>
                 Фото
-                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -135,27 +109,14 @@
             </ul>
           </li>
            <li class="nav-item">
-            <a href="#" class="nav-link ">
+            <a href="{{route('responses.index')}}" class="nav-link">
                 <i class="nav-icon far fa-grin-beam"></i>
               <p>
                 Відгуки
-                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('responses.index')}}" class="nav-link">
-                  <i class="fas fa-binoculars"></i>
-                  <p>Показати</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('responses.create')}}" class="nav-link">
-                  <i class="fas fa-plus-square"></i>
-                  <p>Додати новий</p>
-                </a>
-              </li>
-            </ul>
+
           </li>
           {{-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">

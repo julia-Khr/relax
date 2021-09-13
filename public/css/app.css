@@ -35,6 +35,10 @@ nav {
   line-height: 29px;
 }
 
+.font-size-for-create{
+    font-size: 20px!important;
+}
+
 .nav-link:hover {
   color: darkgray;
 }
@@ -53,11 +57,20 @@ nav {
   background-size: cover;
 }
 
+.modal-top{
+    top: 60px!important;
+}
+
+.modal-response-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 37px;
+    line-height: 114px
+}
+
 .enterprise_name {
   font-family: Montserrat !important;
   font-style: normal;
   font-weight: bold !important;
-  font-size: 1rem !important;
 }
 
 .trips {
@@ -376,6 +389,9 @@ li {
   .make-end {
     text-align: end;
   }
+  .none{
+      display: none;
+  }
 }
 @media (max-width: 1024px) {
   .space {
@@ -466,5 +482,9 @@ li {
 
   .advantage_name {
     font-size: 12px;
+  }
+
+  .modal-response-title{
+      font-size: 24px;
   }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Enterprise;
+use App\Models\Response;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -30,11 +31,11 @@ class EventController extends Controller
 
     public function showEvent()
     {
-
-        $enterprise = Enterprise::find(1)->enterprises;
+        $responses = Response::latest()->paginate(5);
+        // $enterprise = Enterprise::find(1)->enterprises;
         $enterprises = Enterprise::get();
         $events = Event::orderBy('start_date', 'asc')->take(3)->get();
-        return view('visitor.home.greeting', compact( 'events','enterprises'));
+        return view('visitor.home.greeting', compact( 'events','enterprises','responses'));
     }
 
     public function joinToEvent($id)
@@ -53,7 +54,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.events.form');
+        $enterprises = Enterprise::select('id', 'name')->get();
+        return view('admin.events.form', compact('enterprises'));
     }
 
     /**
@@ -90,7 +92,8 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('admin.events.form', compact('event'));
+        $enterprises = Enterprise::select('id', 'name')->get();
+        return view('admin.events.form', compact('event', 'enterprises'));
     }
 
     /**
@@ -102,8 +105,17 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        $event->update($request->only(['name', 'description', 'start_date', 'finish_date', 'enterprise_id']));
-        return redirect()->back()->withSuccess('Оновлена подія ' . $event->name);
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'start_date' => 'required',
+            'finish_date' => 'required',
+            'enterprise_id' => 'required',
+
+        ]);
+        $input = $request->all();
+        $event->update($input);
+        return redirect()->back()->withSuccess('Оновлено подію: ' . $event->name);
     }
 
     /**

@@ -1,4 +1,4 @@
-<div class="conteiner-xxl">
+<div class="container-xxl">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
 
@@ -91,3 +91,4 @@
             </button>
         </div>
     </div>
+

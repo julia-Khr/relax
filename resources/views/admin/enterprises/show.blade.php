@@ -21,11 +21,11 @@
                             Редагувати
                         </a>
                         <form method="POST" action="{{ route('enterprises.destroy', $enterprise) }}"
-                            class="btn ">
+                            >
                             @csrf
                             @method('DELETE')
 
-                            <button class='btn btn-xs btn-danger' type='button' data-toggle="modal"
+                            <button class='btn btn-danger' type='button' data-toggle="modal"
                                 data-target="#confirmDelete" data-title="Видалення Заходу"
                                 data-message='Ви впевнені, що хочете видалити захід {{ $enterprise->name }}?'>
                                 <i class="fas fa-trash">

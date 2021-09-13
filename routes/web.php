@@ -47,19 +47,8 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     // Route::resource('subscriptions', SubscriptionController::class);
      Route::resource('visitors', VisitorController::class);
 });
-<<<<<<< HEAD
-Route::view('/test', 'visitor.home.index');
-<<<<<<< HEAD
-// Route::view('/card', 'visitor.home.greeting');
-Route::resource('/card', CardController::class);
-=======
-Route::view('/card', 'visitor.home.greeting');
-=======
 
 // Route::get('/events', 'App\Http\Controllers\Admin\EventController@show');
 
-// Route::view('/join', 'visitor.home.join_form');
-// Route::view('/card', 'visitor.home.greeting');
+Route::view('/join', 'visitor.home.join_form');
 
->>>>>>> 222f43f7eed61823e898c40fd3ab5d930189b23e
->>>>>>> main

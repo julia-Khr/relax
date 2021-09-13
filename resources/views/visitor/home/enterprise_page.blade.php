@@ -1,7 +1,7 @@
 <style>
 
 .background_img {
-    background: url('{{$enterprise->image_url}}') no-repeat center center;
+    background: url('/image_url/{{$enterprise->image_url}}') no-repeat center center;
     background-attachment: scroll;
     background-size: cover;
     width: 100%;
@@ -28,7 +28,7 @@
 @section('title', 'Enterprise page')
 @section('content')
 <div class="background_img">
-    <div class="container-fluid box">
+    <div class="container-fluid box" id="myElement">
     <div class="events">
         <div class="row">
             <div class="col-lg-7 col-md-7  mx-auto justify-content-start">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-    <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;">
+    <div  class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;">
         <button type="button" class="closest_event_button col-10 mx-auto mb-2">Приєднатися</button>
         <button type="button" class="all_events_button col-10 mx-auto mb-4">Обрати іншу подію</button>
     </div>

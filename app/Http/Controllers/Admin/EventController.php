@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Enterprise;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class EventController extends Controller
 {
@@ -21,21 +23,16 @@ class EventController extends Controller
 
     }
 
-    // public function showEvent()
-    // {   $enterprise = Enterprise::find(1)->enterprises;
-    //     $enterprises = Enterprise::get();
-    //     $events = Event::orderBy('id', 'desc')->latest()->paginate(5);
-
-    // }
-
-    public function showEvent()
+    public function showAllEvent()
     {
 
         $enterprise = Enterprise::find(1)->enterprises;
         $enterprises = Enterprise::get();
-        $events = Event::orderBy('start_date', 'asc')->take(3)->get();
+        $currentDate = Carbon::now();
+        $events = Event::orderBy('start_date', 'asc')->whereDate('start_date', '>=', $currentDate)->take(4)->get();
         return view('visitor.home.greeting', compact( 'events','enterprises'));
     }
+
 
     public function joinToEvent($id)
     {
@@ -45,7 +42,28 @@ class EventController extends Controller
             'event' => Event::findOrFail($id)], compact('enterprises'));
     }
 
+    public function showEvent($id)
+    {
+        $enterprise = Enterprise::find(1)->enterprises;
+        $enterprises = Enterprise::get();
+        $currentDate = Carbon::now();
+        $event = Event::findOrFail($id);
+        $allEvents = Event::where('enterprise_id', $event->enterprise_id)->where('id', '!=',  $event->id)->whereDate('start_date', '>=', $currentDate)
+        ->orderBy('start_date', 'asc')->paginate(3);
+        return view('visitor.home.enterprise_page',  compact('enterprises', 'allEvents','event'));
 
+    }
+    public function showEventForMobile($id)
+    {
+        $enterprise = Enterprise::find(1)->enterprises;
+        $enterprises = Enterprise::get();
+        $currentDate = Carbon::now();
+        $event = Event::findOrFail($id);
+        $allEvents = Event::where('enterprise_id', $event->enterprise_id)->where('id', '!=',  $event->id)->whereDate('start_date', '>=', $currentDate)
+        ->orderBy('start_date', 'asc')->get();
+        return view('visitor.home.other_events_mobile',  compact('enterprises', 'allEvents','event'));
+
+    }
     /**
      * Show the form for creating a new resource.
      *

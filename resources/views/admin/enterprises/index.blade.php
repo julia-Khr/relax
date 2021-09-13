@@ -54,7 +54,7 @@
                                 <td>
 
                                     <img alt="{{ $enterprise->name }}" class="table-avatar"
-                                        src="/image_url/{{ $enterprise->image_url }}">
+                                        src="{{ $enterprise->image_url }}">
 
                                 </td>
 

@@ -67,13 +67,13 @@ class EnterpriseController extends Controller
         return view('admin.enterprises.show', compact('enterprise'));
     }
 
-    public function showEnterprise($id)
-    {
-        $events = Event::where('enterprise_id', $id)->get();
-        return view('visitor.home.enterprise_page', [
-            'enterprise' => Enterprise::findOrFail($id)
-        ],  compact('events'));
-    }
+    // public function showEnterprise($id)
+    // {
+    //     $events = Event::where('enterprise_id', $id)->get();
+    //     return view('visitor.home.enterprise_page', [
+    //         'enterprise' => Enterprise::findOrFail($id)
+    //     ],  compact('events'));
+    // }
 
     /**
      * Show the form for editing the specified resource.

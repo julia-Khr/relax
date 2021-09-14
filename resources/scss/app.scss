@@ -9,7 +9,7 @@
     background-attachment: scroll;
     background-size: cover;
     width: 100%;
-    height: auto;
+    height: fit-content;
     padding-top: 100px;
 
 }
@@ -55,6 +55,7 @@ nav {
 }
 .enterprise_name {
     font-family: Montserrat!important;
+    font-size: 7vw;
     font-style: normal;
     font-weight: bold!important;
 }
@@ -73,7 +74,7 @@ nav {
     font-family: Californian FB!important;
     font-style: normal;
     font-weight: 400;
-    font-size: 48px!important;
+    font-size: 40px!important;
     line-height: 55px;
     color: #FFFFFF!important;
 }
@@ -84,7 +85,7 @@ nav {
     font-family: Californian FB!important;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 35px;
     color: #FFFFFF;
     justify-content: center;
@@ -114,7 +115,6 @@ nav {
     height: 55px;
     border: none;
     margin-top: 20px;
-    margin-top: 200px;
 }
 
 .join_button:hover {
@@ -132,25 +132,6 @@ nav {
 
 }
 
-// .wrap:nth-child(1){
-//     margin-left: -780px;
-//     margin-right: 326px;
-//     width: 276px;
-//     margin-top: 100px;
-//     background: none;
-//     backdrop-filter: none;
-// }
-
-// .wrap:nth-child(1):hover{
-//     background: none;
-//     backdrop-filter: none;
-//     text-decoration: none;
-
-// }
-
-// .wrap:nth-child(2){
-//     margin-top: -300px;
-// }
 
 .wrap:hover {
     background: rgba(160, 160, 160, 0.3);
@@ -240,9 +221,10 @@ nav {
 }
 .name_enterprise {
     position: absolute;
-    margin-left: 3%;
-    margin-top: -13%;
-    font-size: 1rem!important;
+    font-size: 2vw!important;
+    position: absolute;
+    left: 20px;
+    top: 0px;
 }
 
 footer {
@@ -382,6 +364,11 @@ li {
     line-height: 29px;
     color: #FFFFFF;
 }
+.join_to_event{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 @media (max-width: 1224px) {
     .display-none {
@@ -411,12 +398,26 @@ li {
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
     }
+    .logo_join{
+        display:none;
+    }
+    .join_button_mobile{
+        display:none;
+    }
 }
 @media (max-width: 767.98px) {
     .navbar-collapse {
         background-color: rgba(160, 160, 160, 0.2);
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
+    }
+    .join_to_event{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .join_button_laptop{
+        display:none;
     }
 
     .logo {
@@ -433,6 +434,13 @@ li {
         padding-top: 100px;
         border-radius: 0 0 40px 40px;
 
+    }
+
+    .enterprise_name {
+        font-family: Montserrat!important;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold!important;
     }
 
     .events {
@@ -472,6 +480,20 @@ li {
     .display_md {
         display: none;
     }
+    .name_enterprise {
+        position: absolute;
+        font-size: 4vw!important;
+        left: 20px;
+        top: 0px;
+    }
+    .events_carousel{
+        display:none;
+
+    }
+    .all_events{
+        display:none;
+    }
+
 }
 @media (max-width:425px) {
     .advantages {

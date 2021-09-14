@@ -6,7 +6,6 @@
 </head>
 <body>
     @include('inc.header')
-
     <section class="content">
         @yield('content')
     </section>

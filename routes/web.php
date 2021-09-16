@@ -29,11 +29,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/card', 'App\Http\Controllers\Admin\EventController@showEvent');
+Route::get('/card', 'App\Http\Controllers\Admin\EventController@showAllEvent');
 
-Route::get('/enterprise/{id}', 'App\Http\Controllers\Admin\EnterpriseController@showEnterprise');
+// Route::get('/enterprise/{id}', 'App\Http\Controllers\Admin\EnterpriseController@showEnterprise');
 
-Route::get('/event/{id}', 'App\Http\Controllers\Admin\EventController@joinToEvent');
+Route::get('/joinEvent/{id}', 'App\Http\Controllers\Admin\EventController@joinToEvent');
+Route::get('/event/{id}', 'App\Http\Controllers\Admin\EventController@showEvent');
+Route::get('/all_events/{id}', 'App\Http\Controllers\Admin\EventController@showEventForMobile');
+
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');

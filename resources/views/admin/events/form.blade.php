@@ -42,8 +42,12 @@
                     <div class="card-body">
                       <div class="form-group">
                         <label for="start_date">Дата початку</label>
+
+                       {{-- {{dd($event)}} --}}
+
                         <input value="{{isset($event) ? $event->start_date : null}}"
-                        class="form-control form-control-md" type="date" name="start_date">
+                        class="form-control form-control-md" type="date" name="start_date"
+                        placeholder="{{isset($event) ? $event->start_date : null}}">
                         @error('start_date')
                         <div class='alert alert-danger'>
                         {{$message}}</div>

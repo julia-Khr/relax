@@ -35,12 +35,13 @@ class EventController extends Controller
         // $enterprise = Enterprise::find(1)->enterprises;
         $enterprises = Enterprise::get();
         $events = Event::orderBy('start_date', 'asc')->take(3)->get();
+
         return view('visitor.home.greeting', compact( 'events','enterprises','responses'));
     }
 
     public function joinToEvent($id)
     {
-        $enterprise = Enterprise::find(1)->enterprises;
+        // $enterprise = Enterprise::find(1)->enterprises;
         $enterprises = Enterprise::get();
         return view('visitor.home.join_form', [
             'event' => Event::findOrFail($id)], compact('enterprises'));
@@ -93,6 +94,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $enterprises = Enterprise::select('id', 'name')->get();
+        // dd($event);
         return view('admin.events.form', compact('event', 'enterprises'));
     }
 

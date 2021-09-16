@@ -20,7 +20,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex flex-row justify-content-between">
-            <a href="/event/{{$event->id}}"  class="col-sm-2 col-md-2 mb-4 mt-2" ><img src="/img/arrow.png"></a>
+
+            <a href="{{url()->previous()}}"  class="col-sm-2 col-md-2 mb-4 mt-2" ><img src="/img/arrow.png"></a>
             <img src="/img/Logoright.png" style="width: 108px; height: 58px;" class="logo_join col-sm-2 col-xs-2" >
             </div>
                 <form method="POST" action="{{route('visitors.store')}}">
@@ -38,7 +39,7 @@
                     <input value="{{old('email', isset($visitor) ? $visitor->email : null)}}" type="email" id="email" name="email" class="input_frame mb-2 placeholder_style"
                         placeholder="E-mail"><br>
                     <input disabled type="text" id="enterprise_name" name="enterprise_name"
-                        class="input_frame mb-2 placeholder_style" value="{{$enterprises[$event->enterprise_id-1]->name}}" style="color:#000000"><br>
+                        class="input_frame mb-2 placeholder_style" value="{{$event->enterprise->name}}" style="color:#000000"><br>
                     <input readonly value="{{old('event_id', isset($visitor) ? $visitor->event_id : $event->id)}}"
                     type="text" id="event_id" name="event_id" class="input_frame mb-2 placeholder_style" style="display:none"
                     placeholder="{{$event->name}}">

@@ -33,7 +33,8 @@
                     </div>
                     <div class="form-group">
                       <label for="description">Опис події</label>
-                      <textarea name="description" id="description" cols="154" rows="10">{{old('description', isset($event) ? $event->description:null)}}</textarea>
+                      <textarea name="description" id="description" cols="154" rows="10">
+                          {{old('description', isset($event) ? $event->description:null)}}</textarea>
                       @error('description')
                       <div class='alert alert-danger'>
                       {{$message}}</div>

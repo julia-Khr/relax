@@ -46,7 +46,7 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     // Route::resource('responses', ResponseController::class);
     // Route::resource('photos', PhotoController::class);
     // Route::resource('subscriptions', SubscriptionController::class);
-     Route::resource('visitors', VisitorController::class);
+    Route::resource('visitors', VisitorController::class);
 });
 
 // Route::get('/events', 'App\Http\Controllers\Admin\EventController@show');

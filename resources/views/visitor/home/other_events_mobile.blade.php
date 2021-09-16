@@ -21,7 +21,7 @@
 @extends('layouts.visitor.layout')
 @section('title', 'Home page')
 @section('content')
-<div style="background: rgba(160, 160, 160, 0.2); backdrop-filter: blur(20px); border-radius: 16px;">
+<div style="background: rgba(160, 160, 160, 0.2); backdrop-filter: blur(20px); border-radius: 16px;height: 100%">
     <div class="container-fluid">
          <div class="col-12 d-flex flex-row justify-content-between">
             <a href="/event/{{$event->id}}"  class="col-sm-2 col-md-2 mb-4 mt-2" ><img src="/img/arrow.png"></a>

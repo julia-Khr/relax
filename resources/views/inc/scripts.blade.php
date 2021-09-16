@@ -1,10 +1,10 @@
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 <script href="/admin/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script href="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+{{-- <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+//   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script href="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -29,28 +29,23 @@
 <!-- AdminLTE App -->
 <script src="/admin/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="/admin/dist/js/demo.js"></script>
+<script src="/admin/dist/js/demo.js"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/admin/dist/js/pages/dashboard.js"></script>
- <script>
-    const burgerBtn = document.querySelector('.navbar-toggler')
+{{-- <script src="/admin/dist/js/pages/dashboard.js"></script> --}}
 
-    burgerBtn.addEventListener('click', (e) => {
-        document.body.classList.toggle('opened');
-        burgerBtn.classList.add('arrow');
-        document.getElementsByTagName("body")[0].style.overflow = "hidden";
-    })
-
-    burgerBtn.addEventListener('click', (e) => {
-        const navbar_is_active = document.body.classList.contains('opened');
-        if (!navbar_is_active) {
-            burgerBtn.classList.remove('arrow');
-            document.getElementsByTagName("body")[0].style.overflow = "scroll";
-        }
-    });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
+    <script>
+        function changeStyle(){
+            var element = document.getElementById("myElement");
+
+            element.style.opacity = "0";
+        }
+
+    </script>
+
+
+
 

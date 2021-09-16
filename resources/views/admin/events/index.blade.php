@@ -4,8 +4,12 @@
     <section class="content ">
         <div class="card">
             <div class="card-header">
-                <div class="d-flex justify-content-center background-img">
+                <div class="d-flex flex-column text-center background-img">
                     <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat; font-size:5vw">Події</h1>
+                    <div><a href="{{route('events.create')}}" class="nav-link font-size-for-create" >
+                        <i class="far fa-calendar-plus"></i></div>
+                        <p>Створити нову</p>
+                    </a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -28,9 +32,9 @@
                                 Дата закінчення
                             </th>
                             <th>
-                                ID заходу
+                                Назва заходу
                             </th>
-                            <th class="text-end">
+                            <th class="text-center">
                                 Панель керування
                             </th>
                         </tr>
@@ -54,15 +58,15 @@
                                     {{ $event->finish_date }}
                                 </td>
                                 <td>
-                                    {{ $event->enterprise_id }}
+                                    {{ $event->enterprise->name }}
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm mb-2" href="#">
+                                    <a class="btn btn-primary" href="#">
                                         <i class="fas fa-folder">
                                         </i>
                                         Переглянути
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="{{ route('events.edit', $event) }}">
+                                    <a class="btn btn-info" href="{{ route('events.edit', $event) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Редагувати
@@ -72,7 +76,7 @@
                                         @csrf
                                         @method('DELETE')
 
-                                        <button class='btn btn-xs btn-danger' type='button' data-toggle="modal"
+                                        <button class='btn btn-danger' type='button' data-toggle="modal"
                                             data-target="#confirmDelete" data-title="Видалення Події"
                                             data-message='Ви впевнені, що хочете видалити подію {{ $event->name }}?'>
                                             <i class="fas fa-trash">

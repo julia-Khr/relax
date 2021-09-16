@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Response;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class ResponseController extends Controller
@@ -15,7 +16,8 @@ class ResponseController extends Controller
      */
     public function index()
     {
-        //
+        $responses = Response::latest()->paginate(5);
+        return view('admin.responses.index', compact('responses'));
     }
 
     /**
@@ -25,7 +27,8 @@ class ResponseController extends Controller
      */
     public function create()
     {
-        //
+        $events = Event::select('id', 'name')->get();
+        return view('admin.responses.form', compact('events'));
     }
 
     /**
@@ -36,7 +39,27 @@ class ResponseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'author_name' => 'required',
+            'text' => 'required',
+            'date' => 'required',
+            'event_id' => 'required',
+            'author_avatar_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $input = $request->all();
+
+        if ($image = $request->file('author_avatar_url')) {
+            $destinationPath = 'author_avatar_url/';
+            $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $enterpriseImage);
+            $input['author_avatar_url'] = "$enterpriseImage";
+        }
+
+        Response::create($input);
+
+        return redirect()->back()->withSuccess('Додано відгук:' . $request->author_name);
     }
 
     /**
@@ -47,7 +70,7 @@ class ResponseController extends Controller
      */
     public function show(Response $response)
     {
-        //
+        return view('admin.responses.index', compact('response'));
     }
 
     /**
@@ -58,7 +81,8 @@ class ResponseController extends Controller
      */
     public function edit(Response $response)
     {
-        //
+        $events = Event::select('id', 'name')->get();
+        return view('admin.responses.form', compact('response', 'events'));
     }
 
     /**
@@ -70,7 +94,27 @@ class ResponseController extends Controller
      */
     public function update(Request $request, Response $response)
     {
-        //
+        $request->validate([
+            'author_name' => 'required',
+            'text' => 'required',
+            'date' => 'required',
+            'event_id' => 'required',
+            'author_avatar_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('author_avatar_url')) {
+            $destinationPath = 'author_avatar_url/';
+            $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $enterpriseImage);
+            $input['author_avatar_url'] = "$enterpriseImage";
+        } else {
+            unset($input['author_avatar_url']);
+        }
+
+        $response->update($input);
+
+
+        return redirect()->back()->withSuccess('Оновлено відгук: ' . $response->author_name);
     }
 
     /**
@@ -81,6 +125,7 @@ class ResponseController extends Controller
      */
     public function destroy(Response $response)
     {
-        //
+        $response->delete();
+        return redirect()->route('responses.index')->withSuccess('Відгук  '. $response->author_name .'  видалено!');
     }
 }

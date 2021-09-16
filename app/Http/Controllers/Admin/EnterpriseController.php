@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Enterprise;
 use App\Models\Event;
+use App\Models\Response;
 use Illuminate\Http\Request;
 
 class EnterpriseController extends Controller
@@ -67,13 +68,15 @@ class EnterpriseController extends Controller
         return view('admin.enterprises.show', compact('enterprise'));
     }
 
-    // public function showEnterprise($id)
-    // {
-    //     $events = Event::where('enterprise_id', $id)->get();
-    //     return view('visitor.home.enterprise_page', [
-    //         'enterprise' => Enterprise::findOrFail($id)
-    //     ],  compact('events'));
-    // }
+
+    public function showEnterprise($id)
+      {
+
+        $events = Event::where('enterprise_id', $id)->get();
+        return view('visitor.home.enterprise_page', [
+        'enterprise' => Enterprise::findOrFail($id)
+         ],  compact('events'));
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -97,14 +100,14 @@ class EnterpriseController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image_url' => 'required'
+            'image_url' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
         if ($image = $request->file('image_url')) {
             $destinationPath = 'image_url/';
             $enterpriseImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $enterpriseImage);
-            $input['image'] = "$enterpriseImage";
+            $input['image_url'] = "$enterpriseImage";
         } else {
             unset($input['image_url']);
         }

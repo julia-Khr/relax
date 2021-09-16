@@ -1,7 +1,5 @@
 <style>
-
     @media (max-width:767.98px) {
-
         nav.navbar{
             display:none;
         }
@@ -33,13 +31,14 @@
                         Підтвердження замовлення </h2>
                     <input value="{{old('name', isset($visitor) ? $visitor->name : null)}}" type="text" id="name" name="name" class="input_frame mb-2 placeholder_style mx-auto"
                         placeholder="Ім'я"><br>
+
                     <input value="{{old('phone', isset($visitor) ? $visitor->phone : null)}}" type="text" id="phone" name="phone" class="input_frame mb-2 placeholder_style"
                         placeholder="Номер телефону"><br>
                     <input value="{{old('email', isset($visitor) ? $visitor->email : null)}}" type="email" id="email" name="email" class="input_frame mb-2 placeholder_style"
                         placeholder="E-mail"><br>
                     <input disabled type="text" id="enterprise_name" name="enterprise_name"
-                        class="input_frame mb-2 placeholder_style" value="{{$enterprises[$event->enterprise_id-1]->name}}" style="color:#000000"><br>
-                    <input readonly value="{{old('event_id', isset($visitor) ? $visitor->event_id : $event->id)}}"
+                        class="input_frame mb-2 placeholder_style" value="{{$event->enterprise->name}}" style="color:#000000"><br>
+                        <input readonly value="{{old('event_id', isset($visitor) ? $visitor->event_id : $event->id)}}"
                     type="text" id="event_id" name="event_id" class="input_frame mb-2 placeholder_style" style="display:none"
                     placeholder="{{$event->name}}">
                     <input disabled value="{{$event->name}}" type="text" id="event_id" name="event_id" class="input_frame mb-2 placeholder_style"

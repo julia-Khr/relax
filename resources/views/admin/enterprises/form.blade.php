@@ -32,7 +32,7 @@
 
                     </div>
                     @if (isset($enterprise->image_url))
-                        <div class="conteiner">
+                        <div class="container">
                             <img src="/image_url/{{ $enterprise->image_url }}" width="300px">
                         </div>
                     @endif

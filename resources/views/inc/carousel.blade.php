@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+<div class="container-xxl">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+=======
 <div class="events_carousel conteiner-xxl">
         <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+>>>>>>> main
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
@@ -91,7 +96,7 @@
             </button>
         </div>
     </div>
-
+{{--
      <div class="d-xxl-none d-xl-none d-lg-none d-md-none">
         <div class="col-10 mx-auto">
             <img src="/img/IT_Bike.svg" class="d-block w-100" alt="...">
@@ -118,4 +123,4 @@
         <h1 class="name_enterprise">IT Campaing</h1>
         <a href="http://" style="color:#FF931E">Дізнатися більше</a>
     </div>
-    </div>
+    </div> --}}

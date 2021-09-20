@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" href="/css/app.css">
 
-    <script src="/js/app.js"></script>
+
 
 </head>
 
@@ -38,11 +38,12 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        {{-- @include('layouts.visitor.header') --}}
+        @include('inc.navbar_admin')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         @include('layouts.admin.aside')
+
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -69,44 +70,58 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script href="/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="/admin/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script href="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     {{-- <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script> --}}
     <!-- Bootstrap 4 -->
-    <script href="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-    <script href="/admin/plugins/chart.js/Chart.min.js"></script>
+    <script src="/admin/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
-    <script href="/admin/plugins/sparklines/sparkline.js"></script>
+    <script src="/admin/plugins/sparklines/sparkline.js"></script>
     <!-- JQVMap -->
-    <script href="/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script href="/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
-    <script href="/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    <script href="/admin/plugins/moment/moment.min.js"></script>
-    <script href="/admin/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="/admin/plugins/moment/moment.min.js"></script>
+    <script src="/admin/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script href="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Summernote -->
-    <script href="/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="/admin/plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
-    <script href="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/admin/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/admin/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="/admin/dist/js/pages/dashboard.js"></script>
+    {{-- <script src="/admin/dist/js/pages/dashboard.js"></script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
+    <script src="/js/app.js"></script>
+    <script type="text/javascript">
+        $('#confirmDelete').on('show.bs.modal', function(e) {
+            $message = $(e.relatedTarget).attr('data-message');
+            $(this).find('.modal-body p').text($message);
+            $title = $(e.relatedTarget).attr('data-title');
+            $(this).find('.modal-title').text($title);
+            // Pass form reference to modal for submission on yes/ok
+            var form = $(e.relatedTarget).closest('form');
+            $(this).find('.modal-footer #confirm').data('form', form);
+        });
+        $('#confirmDelete').find('.modal-footer #confirm').on('click', function() {
+            $(this).data('form').submit();
+        });
+    </script>
 </body>
 
 </html>

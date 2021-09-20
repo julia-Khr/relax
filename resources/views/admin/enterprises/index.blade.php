@@ -11,8 +11,12 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <div class="d-flex justify-content-center">
-                    <h1 class="card-title fs-1">Заходи</h1>
+                <div class="d-flex flex-column text-center background-img">
+                    <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat; font-size:5vw">Заходи</h1>
+                    <div><a href="{{route('enterprises.create')}}" class="nav-link font-size-for-create">
+                        <i class="far fa-calendar-plus"></i></div>
+                      <p>Створити новий</p>
+                    </a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -29,7 +33,7 @@
                                 Фото заходу
                             </th>
 
-                            <th class="text-end">
+                            <th class="text-center">
                                 Панель керування
                             </th>
                         </tr>
@@ -59,26 +63,29 @@
                                 </td>
 
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('enterprises.show', $enterprise) }}">
+                                    <a class="btn btn-primary" href="{{ route('enterprises.show', $enterprise) }}">
                                         <i class="fas fa-folder">
                                         </i>
                                         Переглянути
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="{{ route('enterprises.edit', $enterprise) }}">
+                                    <a class="btn btn-info" href="{{ route('enterprises.edit', $enterprise) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Редагувати
                                     </a>
                                     <form method="POST" action="{{ route('enterprises.destroy', $enterprise) }}"
-                                        class="btn ">
+                                        class="btn">
                                         @csrf
+
                                         @method('DELETE')
-                                        <button class='btn btn-xs btn-danger' type='button' data-toggle="modal"
+
+                                        <button class='btn btn-danger' type='button' data-toggle="modal"
                                             data-target="#confirmDelete" data-title="Видалення Заходу"
                                             data-message='Ви впевнені, що хочете видалити захід {{ $enterprise->name }}?'>
-                                            <i class="fas fa-trash">
-                                                Видалити</i>
-                                        </button>
+                                            <i class="fas fa-trash">Видалити</i>
+                                               </button>
+
+
                                     </form>
 
                                 </td>
@@ -96,5 +103,7 @@
     </section>
 
     {!! $enterprises->links() !!}
+
+
 
 @endsection

@@ -33,7 +33,7 @@ display: none;
 @section('title', 'Home page')
 @section('content')
 <div class="background-img">
-    <div class="container-fluid box">
+    <div class="container-fluid box " id="myElement">
     <div class="events">
         <div class="row">
             <div class="col-lg-7 col-md-7  mx-auto justify-content-start">
@@ -54,7 +54,7 @@ display: none;
                 </div>
                 @endforeach
             </div>
-            <div class="col-xl-2 col-lg-3 col-md-3 mx-auto">
+            <div id="myElement" class="col-xl-2 col-lg-3 col-md-3 mx-auto">
                 @foreach($events as $event)
                     <a href="/event/{{$event->id}}" class="wrap">
                     <h4 class="event_header_sec">{{$event->enterprise->name}}</h4>
@@ -75,7 +75,7 @@ display: none;
             </div>
         </div>
 
-    <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;">
+    <div class="row d-xxl-none d-xl-none d-lg-none d-md-none" style="margin-top: 100vw;" id="myElement">
         @foreach($events as $event)
         <div class="closest_event_mobile">
         <button onclick="document.location='/event/{{$event->id}}'" type="button" class="closest_event_button col-10 mx-auto">Найближча подія</button>
@@ -89,7 +89,7 @@ display: none;
 <h2 class="trips">Подорожі</h2>
 @include('inc.carousel')
     <h2 class="trips">Наші переваги</h2>
-    <div class="row  justify-content-center mx-auto" style="width:80%">
+    <div id="myElement" class="row  justify-content-center mx-auto" style="width:80%">
         <div class="col-lg-2 col-md-2 col-4 mx-auto ">
             <img src="/img/Map.png" class="mx-auto d-block advantages">
             <h5 class="advantage_name">Досвідчені екскурсоводи</h5>
@@ -113,3 +113,4 @@ display: none;
     </div>
 
 @endsection
+

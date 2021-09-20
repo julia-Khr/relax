@@ -32,7 +32,8 @@
 @section('title', 'Enterprise page')
 @section('content')
 <div class="background_img">
-    <div class="container-fluid box">
+    <div class="container-fluid box" id="myElement">
+
         <div class="row">
             <div class="col-lg-7 col-md-7 mx-auto justify-content-start">
                 <h1 class="enterprise_name" style="color:#FFFFFF;">{{$event->enterprise->name}}</h1>
@@ -77,10 +78,10 @@
             class="closest_event_button col-10 mx-auto mb-2">Приєднатися</button>
         <button onclick="document.location='/all_events/{{$event->id}}'" type="button"
             class="all_events_button col-10 mx-auto mb-4">Обрати іншу подію</button>
+
         </div>
     </div>
-    </div>
-
+</div>
 <h2 class="trips">Наша подорож</h2>
 <div class="row mx-auto">
     <p

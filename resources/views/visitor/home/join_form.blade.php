@@ -1,7 +1,5 @@
 <style>
-
     @media (max-width:767.98px) {
-
         nav.navbar{
             display:none;
         }
@@ -34,6 +32,7 @@
                         Підтвердження замовлення </h2>
                     <input value="{{old('name', isset($visitor) ? $visitor->name : null)}}" type="text" id="name" name="name" class="input_frame mb-2 placeholder_style mx-auto"
                         placeholder="Ім'я"><br>
+
                     <input value="{{old('phone', isset($visitor) ? $visitor->phone : null)}}" type="text" id="phone" name="phone" class="input_frame mb-2 placeholder_style"
                         placeholder="Номер телефону"><br>
                     <input value="{{old('email', isset($visitor) ? $visitor->email : null)}}" type="email" id="email" name="email" class="input_frame mb-2 placeholder_style"

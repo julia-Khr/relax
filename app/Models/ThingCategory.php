@@ -10,7 +10,7 @@ class ThingCategory extends Model
     use HasFactory;
 
     public $table = 'thing_categories';
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'thing_img_url'];
 
     /**
      * @return object

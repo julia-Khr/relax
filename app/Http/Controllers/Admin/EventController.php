@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Enterprise;
 use App\Models\Response;
+use App\Models\Thing;
+use App\Models\ThingCategory;
+use App\Models\EventThing;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 class EventController extends Controller
@@ -22,13 +25,6 @@ class EventController extends Controller
         return view('admin.events.index', compact('events'));
 
     }
-
-    // public function showEvent()
-    // {   $enterprise = Enterprise::find(1)->enterprises;
-    //     $enterprises = Enterprise::get();
-    //     $events = Event::orderBy('id', 'desc')->latest()->paginate(5);
-
-    // }
 
     public function showAllEvent()
     {
@@ -56,9 +52,13 @@ class EventController extends Controller
         $enterprises = Enterprise::get();
         $currentDate = Carbon::now();
         $event = Event::findOrFail($id);
+        $things = Thing::where('id', '7' )->get();
+        $thingCategories = ThingCategory::get();
+        $event_things = EventThing::where('event_id',$id )->get();
         $allEvents = Event::where('enterprise_id', $event->enterprise_id)->where('id', '!=',  $event->id)->whereDate('start_date', '>=', $currentDate)
         ->orderBy('start_date', 'asc')->paginate(3);
-        return view('visitor.home.enterprise_page',  compact('enterprises','allEvents','event','responses'));
+
+        return view('visitor.home.enterprise_page',  compact('enterprises','allEvents','event','responses', 'things', 'thingCategories','event_things'));
 
     }
 
@@ -73,6 +73,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $allEvents = Event::where('enterprise_id', $event->enterprise_id)->where('id', '!=',  $event->id)->whereDate('start_date', '>=', $currentDate)
         ->orderBy('start_date', 'asc')->get();
+
         return view('visitor.home.other_events_mobile',  compact('enterprises', 'allEvents','event','responses'));
 
     }
@@ -85,6 +86,7 @@ class EventController extends Controller
     public function create()
     {
         $enterprises = Enterprise::select('id', 'name')->get();
+
         return view('admin.events.form', compact('enterprises'));
     }
 
@@ -119,9 +121,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        // $event = Event::find(1)->events;
-        // $events = Event::get();
-        // return view('visitor.home.greeting', compact('event'));
+
     }
 
     /**
@@ -133,7 +133,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $enterprises = Enterprise::select('id', 'name')->get();
-        // dd($event);
+
         return view('admin.events.form', compact('event', 'enterprises'));
     }
 
@@ -156,6 +156,7 @@ class EventController extends Controller
         ]);
         $input = $request->all();
         $event->update($input);
+
         return redirect()->back()->withSuccess('Оновлено подію: ' . $event->name);
     }
 

@@ -39,7 +39,6 @@
                <i class="nav-icon fas fa-campground"></i>
               <p>
                 Заходи
-
               </p>
             </a>
 
@@ -47,50 +46,44 @@
           <li class="nav-item">
             <a href="{{route('events.index')}}" class="nav-link ">
                 <i class="nav-icon fas fa-hiking"></i>
-              {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
               <p>
                 Події
-
               </p>
             </a>
 
           </li>
-           <li class="nav-item">
-            <a href="#" class="nav-link ">
+
+
+
+          <li class="nav-item">
+            <a href="{{route('thingCategories.index')}}" class="nav-link ">
                 <i class="nav-icon fas fa-clipboard-list"></i>
               <p>
                 Речі
-
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="fas fa-binoculars"></i>
-                  <p>Показати</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                    <i class="far fa-plus-square"></i>
 
-                  <p>Додати річ</p>
+            {{-- <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('things.index')}}" class="nav-link">
+                  <i class="fas fas fa-clipboard-list"></i>
+                  <p>Речі</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="fas fa-plus-square"></i>
-                  <p>Додати категорію</p>
+                <a href="{{route('thingCategories.index')}}" class="nav-link">
+                    <i class="fas fa-camera"></i>
+                  <p>Категорії речей</p>
                 </a>
               </li>
-            </ul>
+            </ul> --}}
           </li>
+
            <li class="nav-item">
             <a href="#" class="nav-link ">
                 <i class="nav-icon far fa-images"></i>
               <p>
                 Фото
-
               </p>
             </a>
             <ul class="nav nav-treeview">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\EnterpriseController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ThingController;
+use App\Http\Controllers\Admin\ThingCategoryController;
 use App\Http\Controllers\Admin\ResponseController;
 use App\Http\Controllers\Visitor\CardController;
 use App\Http\Controllers\Admin\PhotoController;
@@ -41,7 +42,8 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
     Route::resource('/enterprises', EnterpriseController::class);
     Route::resource('/events', EventController::class);
-    // Route::resource('things', ThingController::class);
+    Route::resource('/things', ThingController::class);
+    Route::resource('/thingCategories', ThingCategoryController::class);
     Route::resource('/admin/responses', ResponseController::class);
 
     // Route::resource('photos', PhotoController::class);

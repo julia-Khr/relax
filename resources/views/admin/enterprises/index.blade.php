@@ -3,10 +3,7 @@
 @section('title', 'Заходи')
 
 @section('content')
-
-
-
-    <section class="content ">
+    <section class="content">
 
         <!-- Default box -->
         <div class="card">
@@ -91,8 +88,6 @@
                                 </td>
                             </tr>
                         @endforeach
-
-
                     </tbody>
                 </table>
             </div>
@@ -102,7 +97,7 @@
         @include('inc.delete_confirm')
     </section>
 
-    {!! $enterprises->links() !!}
+    {!! $enterprises->links('pagination::pagination') !!}
 
 
 

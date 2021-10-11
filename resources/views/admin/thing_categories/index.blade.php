@@ -1,14 +1,14 @@
 @extends('layouts.admin.admin_layout')
-@section('title', 'Події')
+@section('title', 'Категорії речей')
 @section('content')
     <section class="content ">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex flex-column text-center background-img">
-                    <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat; font-size:5vw">Події</h1>
-                    <div><a href="{{route('events.create')}}" class="nav-link font-size-for-create" >
+                    <h1 class="card-title fs-1" style="color:#FFFFFF; font-family:Montserrat; font-size:5vw">Речі</h1>
+                    <div><a href="{{route('thingCategories.create')}}" class="nav-link font-size-for-create" >
                         <i class="far fa-calendar-plus"></i></div>
-                        <p>Створити нову</p>
+                        <p>Додати нову категорію</p>
                     </a>
                 </div>
             </div>
@@ -20,19 +20,13 @@
                                 ID
                             </th>
                             <th>
-                                Назва події
+                                Назва категорії
                             </th>
                             <th>
-                                Опис події
+                                Картинка категорії
                             </th>
                             <th>
-                                Дата початку
-                            </th>
-                            <th>
-                                Дата закінчення
-                            </th>
-                            <th>
-                                Назва заходу
+                                Речі категорії
                             </th>
                             <th class="text-center">
                                 Панель керування
@@ -40,47 +34,43 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($events as $event)
+                        @foreach ($thingCategories as $thingCategory)
                             <tr>
                                 <td>
-                                    {{ $event->id }}
+                                    {{ $thingCategory->id }}
                                 </td>
                                 <td>
-                                    {{ $event->name }}
+                                    {{ $thingCategory->name }}
                                 </td>
                                 <td>
-                                    {{ $event->description }}
+                                <img alt="{{ $thingCategory->name }}" class="table-avatar"
+                                        src="/thing_img_url/{{ $thingCategory->thing_img_url }}">
                                 </td>
+
                                 <td>
-                                    {{ $event->start_date }}
+                                    @foreach($thingCategory->things()->get() as $thing)
+                                          {{$thing->name}}<br>
+                                    @endforeach
                                 </td>
-                                <td>
-                                    {{ $event->finish_date }}
-                                </td>
-                                <td>
-                                    {{ $event->enterprise->name }}
-                                </td>
+
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Переглянути
-                                    </a>
-                                    <a class="btn btn-info" href="{{ route('events.edit', $event) }}">
+                                    <a class="btn btn-info" href="{{ route('thingCategories.edit', $thingCategory) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Редагувати
                                     </a>
-                                    <form method="POST" action="{{ route('events.destroy', $event) }}"
+                                    <form method="POST" action="{{ route('thingCategories.destroy', $thingCategory) }}"
                                         class="btn ">
                                         @csrf
                                         @method('DELETE')
+
                                         <button class='btn btn-danger' type='button' data-toggle="modal"
-                                            data-target="#confirmDelete" data-title="Видалення Події"
-                                            data-message='Ви впевнені, що хочете видалити подію {{ $event->name }}?'>
+                                            data-target="#confirmDelete" data-title="Видалення Категорії Речей"
+                                            data-message='Ви впевнені, що хочете видалити категорію речей {{ $thingCategory->name }}?'>
                                             <i class="fas fa-trash">
                                                 Видалити</i>
                                         </button>
+
                                     </form>
                                 </td>
                             </tr>
@@ -91,5 +81,5 @@
         </div>
         @include('inc.delete_confirm')
     </section>
-    {!! $events->links('pagination::pagination') !!}
+    {!! $thingCategories->links('pagination::pagination') !!}
 @endsection

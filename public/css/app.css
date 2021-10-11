@@ -345,7 +345,7 @@ li {
 .things__wrapper {
   background: #66AA69;
   border-radius: 16px;
-  height: 80%;
+  height: fit-content;
 }
 
 .things__wrapper > ul {

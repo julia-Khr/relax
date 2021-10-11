@@ -35,3 +35,4 @@ class CreateEventThingsTable extends Migration
         Schema::dropIfExists('event_things');
     }
 }
+

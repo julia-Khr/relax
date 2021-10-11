@@ -18,7 +18,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex flex-row justify-content-between">
-
             <a href="{{url()->previous()}}"  class="col-sm-2 col-md-2 mb-4 mt-2" ><img src="/img/arrow.png"></a>
             <img src="/img/Logoright.png" style="width: 108px; height: 58px;" class="logo_join col-sm-2 col-xs-2" >
             </div>
@@ -32,7 +31,6 @@
                         Підтвердження замовлення </h2>
                     <input value="{{old('name', isset($visitor) ? $visitor->name : null)}}" type="text" id="name" name="name" class="input_frame mb-2 placeholder_style mx-auto"
                         placeholder="Ім'я"><br>
-
                     <input value="{{old('phone', isset($visitor) ? $visitor->phone : null)}}" type="text" id="phone" name="phone" class="input_frame mb-2 placeholder_style"
                         placeholder="Номер телефону"><br>
                     <input value="{{old('email', isset($visitor) ? $visitor->email : null)}}" type="email" id="email" name="email" class="input_frame mb-2 placeholder_style"

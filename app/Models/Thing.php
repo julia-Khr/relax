@@ -20,7 +20,7 @@ class Thing extends Model
      */
     public function events(): object
     {
-        return $this->belongsToMany(Event::class, 'event_things')->withPivot('thing_count');
+        return $this->belongsToMany(Event::class, 'event_things');
     }
 
     /**

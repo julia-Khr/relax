@@ -33,7 +33,6 @@
 @section('content')
 <div class="background_img">
     <div class="container-fluid box" id="myElement">
-
         <div class="row">
             <div class="col-lg-7 col-md-7 mx-auto justify-content-start">
                 <h1 class="enterprise_name" style="color:#FFFFFF;">{{$event->enterprise->name}}</h1>

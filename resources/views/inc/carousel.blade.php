@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 <div class="container-xxl">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-=======
-<div class="events_carousel conteiner-xxl">
-        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
->>>>>>> main
             <div class="carousel-inner">
 
                 <div class="carousel-item active">

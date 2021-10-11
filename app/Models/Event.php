@@ -55,6 +55,6 @@ class Event extends Model
      */
     public function things(): object
     {
-        return $this->belongsToMany(Thing::class, 'event_things')->withPivot('thing_count');
+        return $this->belongsToMany(Thing::class, 'event_things');
     }
 }
